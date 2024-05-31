@@ -1,0 +1,8 @@
+tsc --project tsconfig.json
+// render Header
+// export const renderHeaderMiddleware = (req: Request, res: Response, next: NextFunction) => {
+//     res.render("./header", {categories: categories}, (err: Error, headerHtml: string) => {
+//         res.locals.headerHtml = headerHtml;
+//         next();
+//     });
+// };

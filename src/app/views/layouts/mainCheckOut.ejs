@@ -1,0 +1,169 @@
+<link rel="stylesheet" href="../styles/checkout.css">
+<link rel="stylesheet" href="../styles/toastMessage.css">
+<style>
+    .toast__error,
+    .toast__success {
+        margin-top: -125px !important;
+    }
+    .toast__error+.toast__error {
+        margin-top: -15px !important;
+    }
+
+    .toast__success+.toast__success {
+        margin-top: -15px !important;
+    }
+</style>
+<main class="main main__checkOut">
+    <div class="main__checkOut--boxTitle">
+        <span class="main-title">THANH TOÁN</span>
+        <span class="main__checkOut--title">Thông Tin Đơn Hàng</span>
+    </div>
+    <form class="container__content form__checkOut" method="post" action="/postCheckOut">
+        <input type="text" name="totalAmount" id="totalAmount" value="" style="display: none;">
+        <section class="main__checkOut--left">
+            <div class="container__address">
+                <div class="form__group">
+                    <label for="" class="form__label">Tỉnh/Thành phố, Quận/Huyện, Phường/Xã <span
+                            style="color: #e45b8d;">*</span></label>
+                    <input type="text" class="form__input address__input" name="address" id=""
+                        placeholder="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã"></input>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Địa chỉ cụ thể <span style="color: #e45b8d;">*</span></label>
+                    <input type="text" class="form__input addressDetail__input" name="adderssSpecific" id=""
+                        placeholder="Địa chỉ cụ thể"></input>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Email <span style="color: #e45b8d;">*</span></label>
+                    <input type="email" class="form__input email__input" name="emailReceiver" id="" placeholder="Email"></input>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Số điện thoại <span style="color: #e45b8d;">*</span></label>
+                    <input type="number" class="form__input phone__input" name="phoneReceiver" id=""
+                        placeholder="Số điện thoại"></input>
+                    <span class="form__message"></span>
+                </div>
+            </div>
+            <div class="container__shippingMethod shippingMethodBox">
+                <label for="" class="form__label">Phương thức vận chuyển <span style="color: #e45b8d;">*</span></label>
+                <div class="form__group form__methodShipping form__methodShipping1 methodShipping1 ">
+                    <input class="form__methodShipping--input" name="form__methodShipping--input" type="radio" value="0">
+                    <div class="form__methodShipping--info">
+                        <span class="name__shippingMethod">Miễn phí</span>
+                        <span class="desc__shippingMethod">Giành cho đơn hàng > 1.000.000 Đ</span>
+                    </div>
+                    <span class="price__methodShipping">0 đ</span>
+                </div>
+                <div class="form__group form__methodShipping form__methodShipping1 methodShipping2">
+                    <input checked class="form__methodShipping--input" name="form__methodShipping--input" type="radio" value="30000">
+                    <div class="form__methodShipping--info">
+                        <span class="name__shippingMethod">Giao Hàng Nhanh</span>
+                        <span class="desc__shippingMethod">2-3 ngày (tùy điều kiện thực tế)</span>
+                    </div>
+                    <span class="price__methodShipping">30.000 đ</span>
+                </div>
+                <div class="form__group form__methodShipping form__methodShipping1 methodShipping3">
+                    <input class="form__methodShipping--input" name="form__methodShipping--input" type="radio" value="50000">
+                    <div class="form__methodShipping--info">
+                        <span class="name__shippingMethod">Hỏa Tốc</span>
+                        <span class="desc__shippingMethod">Nhận hàng vào ngày mai</span>
+                    </div>
+                    <span class="price__methodShipping">50.000 đ</span>
+                </div>
+            </div>
+            <div class="container__shippingMethod">
+                <label for="" class="form__label">Phương thức thanh toán <span style="color: #e45b8d;">*</span></label>
+                <div class="form__group form__methodShipping paymentMethodButton">
+                    <input checked class="form__paymentMethod--input" type="radio" value="1">
+                    <div class="form__methodShipping--info">
+                        <span class="name__shippingMethod">Tiền mặt</span>
+                        <span class="desc__shippingMethod">Thanh toán khi nhận hàng (COD)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main__checkOut--right">
+            <div class="main__info mainCart">
+                <div class="main__info--top">
+                    <div class="main__info--title">
+                        <span class="title__cart">Thông tin đơn hàng.</span>
+                    </div>
+                </div>
+                <div class="main__info--bottom">
+                    <div class="info--bottom-container">
+                                <span class="info--bottom-container--left">
+                                    Tạm tính: 
+                                </span>
+                                <div class="info--bottom-container--right">
+                                    <span class="container--right-price">
+                                        
+                                    </span>
+                                    <div class="container--right-vnd">
+                                        VNĐ
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info--bottom-container">
+                                <span class="info--bottom-container--left">
+                                    Phí vận chuyển: 
+                                </span>
+                                <div class="info--bottom-container--right">
+                                    <span class="container--right-price priceShipping" id="priceShipping">
+                                        30.000
+                                    </span>
+                                    <div class="container--right-vnd">
+                                        VNĐ
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info--bottom-container">
+                                <span class="info--bottom-container--left">
+                                    Voucher: 
+                                </span>
+                                <div class="info--bottom-container--right">
+                                    <input type="text" class="voucher" placeholder="Mã giảm giá">
+                                </div>
+                            </div>
+        
+                            <div class="box__total-cart">
+                                <span class="box__total--cart-left">
+                                    Tổng tiền:
+                                </span>
+                                <div class="box__total--cart-right">
+                                    <span class="total-price">
+                                        245.900.000
+                                    </span>
+                                    <span class="box__total--cart-right-vnd">
+                                        VNĐ
+                                    </span>
+                                </div>
+                            </div>
+        
+                            <button class="checkout__buttonCart" type="submit">
+                                Thanh Toán
+                            </button>
+                </div>
+            </div>
+        </section>
+    </form>
+</main>
+<div class="container__toast" style="height: 150px;">
+    <!-- <div class="toast toast__success">
+                    <div class="toast__icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">Đăng nhập thành công!</h3>
+                        <span class="toast__message">Vào trang user để kiểm tra thông tin tài khoản!</span>
+                    </div>
+                    <div class="toast__close">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div> -->
+</div>
+<script type="module"> var exports = {}</script>
+<script type="module" src="../public/ts/checkOut.js"></script>
+<script type="module" src="../public/ts/toastMessage.js"></script>

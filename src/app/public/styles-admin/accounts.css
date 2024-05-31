@@ -1,0 +1,70 @@
+:root {
+    --height-td: 80px;
+    --height-avt: 60px;
+}
+tbody tr {
+    padding-bottom: 20px !important;
+}
+tbody td {
+    padding: 0 !important;
+    padding: 20px 0;
+}
+.tdInfomation {
+    height: 100%;
+    display: flex;
+    padding-left: 50px !important;
+    align-items: center;
+    gap: 10px;
+}
+.boxAvatar {
+    width: var(--height-avt);
+    height: var(--height-avt);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.boxAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nameUser {
+    height: var(--height-td);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+.nameUser-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #de2e6c;
+    display: flex;
+}
+.nameUser-name {
+    font-weight: 700;
+}
+.role-admin {
+    color: blue;
+}
+.role-user {
+    color: chartreuse;
+}
+.td-action {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(-100%);
+}
+.td-action ion-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+.create {
+    color: blue;
+}
+.deleteAccount {
+    color: #de2e6c;
+}

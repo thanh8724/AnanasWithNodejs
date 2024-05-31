@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&family=Work+Sans:wght@300;500&display=swap');
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: 'Work Sans', sans-serif;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.main__shop--banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 100px;
+    padding: 80px 160px 0 160px;
+}
+.shop__banner--left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.shop__banner--name {
+    font-size: 16px;
+}
+.shop__banner--title {
+    font-size: 60px;
+    padding: 30px 0;
+    font-weight: bold;;
+}
+.shop__banner--line {
+    width: 80px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+.shop__banner--desc {
+    width: 50%;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.shop__banner--right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.shop__banner--right-title {
+    width: 100%;
+    height: auto;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    transition: var(--trans-bounce);
+    padding-left: 30px;
+}
+.shop__banner--right---boxShow {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.shop__banner--right---boxShow a {
+    /* min-width: 100%; */
+    height: 100%;
+    padding: 20px 30px;
+}
+.boxShow-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+    min-width: 100%;
+    height: 200px;
+    padding: 0 20px;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    transition: var(--trans-bounce);
+}
+.boxShow-item:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.boxShow-item--left {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.boxShow-item--left---boxImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 100rem;
+    overflow: hidden;
+}
+.boxShow-item--left---boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.boxShow-item--right{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.boxShow-item--right---name {
+    font-weight: 600;
+}
+.boxShow-item--right---content {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 17px;
+    overflow: hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+/* style slick */
+.slick-dots {
+    bottom: -20px;
+}
+.slick-dots li {
+    width: 20px;
+    height: 3px;
+    border-radius: 10px;
+}
+
+.main__content-shop {
+    width: 100%;
+    min-height: 800px;
+    padding: 80px 160px 0 160px;
+}
+.main__content-shop--top {
+    width: 100%;
+    height: 65px;
+    /* overflow: hidden; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.container__filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: var(--trans-bounce3);
+}
+.show-hiddenFilter {
+    width: auto;
+    height: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-hiddenFilter--btn {
+    height: 45px;
+    border: 1px solid orangered;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.show-hiddenFilter_text {
+    font-weight: 400;
+    font-size: 15px;
+    color: orangered;
+}
+.show-hiddenFilter ion-icon {
+    font-size: 18px;
+    color: orangered;
+}
+.container__filter--main {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 10px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--trans-bounce);
+}
+.show__filter__list {
+    width: auto;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 60px;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+.show__filter__list-title {
+    font-weight: 400;
+    font-size: 15px;
+    color: black;
+}
+.filter__list {
+    width: auto;
+    height: auto;
+    padding: 20px 40px 20px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 120%;
+    z-index: 999;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--trans-bounce2);
+    background-color: white;
+}
+.filter__list:nth-child(3) {
+    right: 0;
+}
+.filter__list--item {
+    min-width: 30px;
+    display: flex;
+    gap: 2px;
+}
+.filter__list--item-input {
+    width: 20px;
+}
+.filter__list--item-name {
+    display: inline-flex;
+    min-width: 80px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+}
+.show__filter__list:hover .filter__list{
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__content-shop--bottom {
+    width: 100%;
+    min-height: 500px;
+    padding-top: 30px;
+}
+.container__products {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.product__link {
+    width: calc(100%/4 - 18.8px);
+    height: auto;
+}
+.container__product--item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.product__item--boxImg {
+    width: 100%;
+    max-height: 280px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.product__item--boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product__item--boxImg:hover .product__item--boxAction {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 888;
+}
+.product__item--boxAction {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.464);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    visibility: visible;
+    transition: var(--trans-bounce);
+    cursor: pointer;
+}
+.product__item--boxAction ion-icon {
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+    transition: var(--trans-bounce);
+}
+.love {
+    background-color: #dc362e !important;
+    color: white !important;
+    cursor: pointer;
+}
+.product__item--content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: black;
+    padding: 5px;
+}
+.name__product {
+    width: 100%;
+    height: auto;
+    font-weight: 500;
+    font-size: 15px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.price__product {
+    font-size: 14px;
+    font-weight: 400;
+}
+.product__content--bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.views__product {
+    font-size: 14px;
+    font-weight: 300;
+}
+.evaluate {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.evaluate span {
+    font-size: 13px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.evaluate ion-icon {
+    color: orange;
+    font-size: 15px;
+}
+.main__shop--banner2 {
+    width: 100%;
+    height: auto;
+    padding: 80px 0 0 0;
+}
+.shop__banner2--content {
+    width: 100%;
+    height: 300px;
+    color: white;
+    padding: 0 160px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    background-color: black;
+}
+.shop__banner2--content-left {
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.logo__banner-shop {
+    width: 40%;
+    height: auto;
+}
+.shop__banner2--content-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.shop__banner2--content-bottom img {
+    width: 4%;
+}
+.shop__banner2--content-bottom span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 300;
+}
+.shop__banner2--content-right {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    background-color: black;
+}
+.content__right-top {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+}
+.content__right-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+}
+.item-lazyActive {
+    transform: translateX(0) !important;
+}
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}

@@ -1,0 +1,270 @@
+<link rel="stylesheet" href="../styles/shop.css">
+<main class="main">
+    <section class="main__shop--banner">
+        <div class="shop__banner--left">
+            <span class="shop__banner--name">ANANAS/</span>
+            <h1 class="shop__banner--title">SHOP</h1>
+            <span class="shop__banner--line"></span>
+            <span class="shop__banner--desc">Chúng tôi có một đội ngũ chuyên gia giàu kinh nghiệm, luôn cập nhật
+                xu hướng thời trang mới nhất để mang đến cho bạn những đôi giày đẹp nhất.</span>
+        </div>
+        <div class="shop__banner--right">
+            <span class="shop__banner--right-title">DANH MỤC NỔI BẬT</span>
+            <div class="shop__banner--right---boxShow">
+                <a href="#">
+                    <div class="boxShow-item">
+                        <div class="boxShow-item--left">
+                            <div class="boxShow-item--left---boxImg">
+                                <img src="../images/banner-phụ_2m-600x320.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="boxShow-item--right">
+                            <span class="boxShow-item--right---name">ALL BLACK IN BLACK</span>
+                            <span class="boxShow-item--right---content">Mặc dù được ứng dụng rất nhiều, nhưng
+                                sắc đen lúc nào cũng toát lên một vẻ huyền bí không nhàm chán</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="boxShow-item">
+                        <div class="boxShow-item--left">
+                            <div class="boxShow-item--left---boxImg">
+                                <img src="../images/Banner_Sale-off-1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="boxShow-item--right">
+                            <span class="boxShow-item--right---name">OUTLET SALE</span>
+                            <span class="boxShow-item--right---content">Danh mục những sản phẩm bán tại "giá tốt
+                                hơn" chỉ được bán kênh online - Online Only, chúng đã từng làm mưa làm gió một
+                                thời gian và hiện đang rơi vào tình trạng bể size, bể số.</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="main__content-shop">
+        <div class="main__content-shop--top">
+            <div class="container__filter">
+                <div class="show-hiddenFilter">
+                    <button class="show-hiddenFilter--btn">
+                        <ion-icon name="filter-outline"></ion-icon>
+                        <span class="show-hiddenFilter_text">
+                            Hiện filter
+                        </span>
+                    </button>
+                </div>
+                <div class="container__filter--main">
+                    <button class="show__filter__list">
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                        <span class="show__filter__list-title">Giá</span>
+                        <ul class="filter__list">
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Giảm dần</span>
+                            </li>
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Tăng dần</span>
+                            </li>
+                        </ul>
+                    </button>
+                    <button class="show__filter__list">
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                        <span class="show__filter__list-title">Danh mục</span>
+                        <ul class="filter__list">
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Bán chạy</span>
+                            </li>
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Giảm giá</span>
+                            </li>
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Mới</span>
+                            </li>
+                        </ul>
+                    </button>
+                    <button class="show__filter__list">
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                        <span class="show__filter__list-title">Tên</span>
+                        <ul class="filter__list">
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">A-Z</span>
+                            </li>
+                            <li class="filter__list--item">
+                                <input class="filter__list--item-input" type="checkbox">
+                                <span class="filter__list--item-name">Z-A</span>
+                            </li>
+                        </ul>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="main__content-shop--bottom">
+            <div class="container__products showContentShop">
+                <!-- DOM SHOW -->
+                <% listProducts.forEach(item=> { %>
+                    <a href="/product-detail/<%=item.id%>" class="product__link">
+                        <div class="container__product--item" data-id="<%=item.id%>" data-name="<%=item.nameProduct%>" data-price="<%=item.priceProduct%>" data-idCate="<%=item.categoriesProduct%>">
+                            <div class="product__item--boxImg">
+                                <img src="<%=item.imageProduct%>" alt="">
+                                <div class="product__item--boxAction">
+                                    <ion-icon class="icon-share" name="share-social-outline"></ion-icon>
+                                    <ion-icon onclick="like(this)" class="icon-heart" name="heart"></ion-icon>
+                                    <ion-icon class="icon-addcart" name="bag-add-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="product__item--content">
+                                <span class="name__product">
+                                    <%= item.nameProduct %>
+                                </span>
+                                <span class="price__product">
+                                    <%= Number(item.priceProduct).toLocaleString('vi-VN') %>VNĐ
+                                </span>
+                                <div class="product__content--bottom">
+                                    <span class="views__product">
+                                        <%= item.viewProduct %>+ views
+                                    </span>
+                                    <span class="evaluate">
+                                        <span>
+                                            <%=item.quantitySold%> đã bán
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <% })%>
+            </div>
+        </div>
+    </section>
+    <section class="main__shop--banner2">
+        <div class="shop__banner2--content">
+            <div class="shop__banner2--content-left">
+                <img src="../images/Logo_Ananas_Footer.svg" alt="" class="logo__banner-shop">
+                <div class="shop__banner2--content-bottom">
+                    <img src="../images/Logo_Ananas_Header.svg" alt="">
+                    <span>/2024</span>
+                </div>
+            </div>
+            <div class="shop__banner2--content-right">
+                <span class="content__right-top">
+                    GIẢM GIÁ CỰC SỐC & MIỄN PHÍ VẬN CHUYỂN
+                </span>
+                <span class="content__right-bottom">
+                    Với hóa đơn từ 900k!
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="container__article">
+        <div class="container__article--box">
+            <span class="container__article--title">
+                TIN TỨC
+            </span>
+            <span class="container__article--title2">
+                VÔ VÀN ƯU ĐÃI HẤP DẪN CÙNG
+                <br>
+                <span class="ananas_highlight">ANANAS!</span>
+            </span>
+            <span class="article-line"></span>
+            <span class="container__article--content">
+                Chúng tôi rất vui mừng thông báo rằng bộ sưu tập giày mới của chúng tôi sẽ ra mắt vào ngày 3
+                tháng 8 năm 2023. Bộ sưu tập này bao gồm một loạt các kiểu dáng và màu sắc mới, phù hợp với mọi
+                sở thích và phong cách.
+
+                Bộ sưu tập mới được lấy cảm hứng từ những xu hướng thời trang mới nhất, với các kiểu dáng hiện
+                đại và thời trang. Các màu sắc được lựa chọn cẩn thận để phù hợp với mọi tông da và phong cách.
+
+                Chúng tôi tin rằng bộ sưu tập mới này sẽ là một bổ sung tuyệt vời cho tủ quần áo của bạn. Hãy
+                nhớ đặt hàng sớm để đảm bảo bạn có được đôi giày yêu thích của mình!
+            </span>
+            <div class="container__article--boxButton">
+                <a class="button__discover" href="#">Khám phá ngay</a>
+                <a class="button__contact" href="#">Liên hệ</a>
+            </div>
+        </div>
+        <div class="container__article--box">
+            <span class="container__article--title">
+                BÀI VIẾT
+            </span>
+            <div class="container__article--items">
+                <div class="container__article--item">
+                    <div class="article--item__boxImg">
+                        <a href="#">
+                            <img src="https://ananas.vn/wp-content/uploads/kvngang_mobile_web-300x160.jpg" alt="">
+                        </a>
+                    </div>
+                    <a class="article--item__title" href="#">
+                        URBAS CORLURAY PACK
+                    </a>
+                    <p class="article--item__content">
+                        Urbas Corluray Pack đem đến lựa chọn “làm mới mình” với sự kết hợp 5 gam màu mang sắc
+                        thu; phù hợp với những người trẻ năng động, mong muốn thể...
+                    </p>
+                    <a href="#" class="article--item__content-more">Đọc thêm</a>
+                </div>
+                <div class="container__article--item">
+                    <div class="article--item__boxImg">
+                        <a href="#">
+                            <img src="https://ananas.vn/wp-content/uploads/Mobile_Blog-1980s_0-300x160.jpg" alt="">
+                        </a>
+                    </div>
+                    <a class="article--item__title" href="#">
+                        VINTAS SAIGON 1980s
+                    </a>
+                    <p class="article--item__content">
+                        Với bộ 5 sản phẩm, Vintas Saigon 1980s Pack đem đến một sự lựa chọn “cũ kỹ thú vị” cho
+                        những người trẻ sống giữa thời hiện đại nhưng lại yêu nét...
+                    </p>
+                    <a href="#" class="article--item__content-more">Đọc thêm</a>
+                </div>
+            </div>
+            <div class="container__article--items">
+                <div class="container__article--item">
+                    <div class="article--item__boxImg">
+                        <a href="#">
+                            <img src="https://ananas.vn/wp-content/uploads/peeping_pattas01-300x160.jpg" alt="">
+                        </a>
+                    </div>
+                    <a class="article--item__title" href="#">
+                        SNEAKER FEST VIETNAM VÀ SỰ KẾT HỢP
+                    </a>
+                    <p class="article--item__content">
+                        Việc sử dụng dáng giày Vulcanized High Top của Ananas trong thiết kế và cảm hứng bắt
+                        nguồn từ linh vật Peeping - đại diện cho tinh thần xuyên...
+                    </p>
+                    <a href="#" class="article--item__content-more">Đọc thêm</a>
+                </div>
+                <div class="container__article--item">
+                    <div class="article--item__boxImg">
+                        <a href="#">
+                            <img src="https://ananas.vn/wp-content/uploads/shoes-anatomy-thumbnail-300x160.jpg" alt="">
+                        </a>
+                    </div>
+                    <a class="article--item__title" href="#">
+                        "GIẢI PHẪU" GIÀY VULCANIZED
+                    </a>
+                    <p class="article--item__content">
+                        Trong phạm vi bài viết ngắn, hãy cùng nhau tìm hiểu cấu tạo giày Vulcanized Sneaker -
+                        loại sản phẩm mà Ananas đã chọn làm "cốt lõi" để theo đuổi trong...
+                    </p>
+                    <a href="#" class="article--item__content-more">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="../js/shop.js"></script>
+<% 
+    function strToNumber(formattedString) { return parseFloat(formattedString.replace(/\./g, "" )); } 
+    function formatMoney(numberFormat) { return new Intl.NumberFormat("vi-VN", { style: "decimal" , //-> hiển thị đơn vị tiền tệ
+        // style: 'currency' // không hiển thị đơn vị tiền tệ
+        // currency: 'VND'
+        }).format(numberFormat);
+        }
+%>

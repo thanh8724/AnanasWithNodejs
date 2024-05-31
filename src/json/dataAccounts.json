@@ -1,0 +1,49 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "nameAccount": "Nguyen Thah",
+      "emailAccount": "quocthanhn87@gmail.com",
+      "passwordAccount": 1234567890,
+      "phoneAccount": null,
+      "avatarAccount": "https://i.pinimg.com/564x/cc/2c/f1/cc2cf1509516b0fe79b2c4b64e642a0d.jpg",
+      "roleAccount": "user"
+    },
+    {
+      "id": 2,
+      "nameAccount": "Thanh Quoc",
+      "emailAccount": "admin@gmail.com",
+      "passwordAccount": 1234567890,
+      "phoneAccount": null,
+      "avatarAccount": "https://i.pinimg.com/564x/95/db/9e/95db9e90b0ce8f5f8dff5801e1ab8617.jpg",
+      "roleAccount": "admin"
+    },
+    {
+      "id": 10,
+      "nameAccount": "Thanh Quoc",
+      "emailAccount": "quocthanhn@gmail.com",
+      "passwordAccount": 123457890,
+      "phoneAccount": null,
+      "avatarAccount": "https://i.pinimg.com/564x/5b/c3/7c/5bc37cc103afa0b5e0abdbaa7c17ae88.jpg",
+      "roleAccount": "user"
+    },
+    {
+      "id": 11,
+      "nameAccount": "Quoc Thanh",
+      "emailAccount": "quocthanh7@gmail.com",
+      "passwordAccount": 1234567890,
+      "phoneAccount": null,
+      "avatarAccount": "/uploads/undefined",
+      "roleAccount": "admin"
+    },
+    {
+      "id": 13,
+      "nameAccount": "Quoc Thanh",
+      "emailAccount": "quocthan@gmail.com",
+      "passwordAccount": 123457809,
+      "phoneAccount": null,
+      "avatarAccount": null,
+      "roleAccount": "user"
+    }
+  ]
+}

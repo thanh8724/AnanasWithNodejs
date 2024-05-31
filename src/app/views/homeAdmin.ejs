@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Webstie Icon" type="png" href="../images/Logo_Ananas_Header.svg">
+    <title>Ananas - Dashboard</title>
+    <link rel="stylesheet" href="../styles-admin/dashboard.css">
+    <link rel="stylesheet" href="../styles-admin/showHiddenNavBar.css">
+    <link rel="stylesheet" href="../styles-admin/base.css">
+    <!-- <link rel="stylesheet" href="../styles-admin/toggle-darkmode.css"> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body>
+    <div class="main__content">
+        <div class="main__content--navBar">
+            <div class="box__logo-navBar">
+                <div class="box__logo-navBar--img">
+                    <img src="../images/Logo_Ananas_Header.svg" alt="">
+                </div>
+                <span class="logo-text">Ananas</span>
+            </div>
+            <ul class="navBar-ul">
+                <li class="navBar-li li-active">
+                    <a href="/dashboard">
+                        <ion-icon name="grid-outline"></ion-icon>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="navBar-li">
+                    <a href="/categories">
+                        <ion-icon name="layers-outline"></ion-icon>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li class="navBar-li">
+                    <a href="/products">
+                        <ion-icon name="cube-outline"></ion-icon>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li class="navBar-li">
+                    <a href="/orders">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="navBar-li">
+                    <a href="/accounts">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <span>Accounts</span>
+                    </a>
+                </li>
+                <li class="navBar-li" id="logOutAccount">
+                    <a href="#">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main__content--container">
+            <div class="main__content--container-header">
+                <span class="header__title--welcome">
+                    <!-- DOM SHOW -->
+                </span>
+                <div class="container-header--content">
+                    <div class="container-header-left">
+                        <button class="hidden-show--navBar">
+                            <span class="line-button"></span>
+                            <span class="line-button"></span>
+                            <span class="line-button"></span>
+                            <ion-icon class="icon-shownavBar" name="arrow-forward-outline"
+                                style="display: none;"></ion-icon>
+                        </button>
+                        <div class="header__title">
+                            <span class="header__title--title">
+                                Dasboard
+                            </span>
+                        </div>
+                    </div>
+                    <div class="container-header-right">
+                        <div class="container-header-right-left">
+                            <div class="boxIcon">
+                                <ion-icon name="notifications-outline"></ion-icon>
+                                <span class="label-show">5</span>
+                            </div>
+                            <div class="boxIcon">
+                                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                                <span class="label-show">9</span>
+                            </div>
+                            <div class="boxIcon">
+                                <ion-icon name="gift-outline"></ion-icon>
+                                <span class="label-show label-show3">2</span>
+                            </div>
+                        </div>
+                        <span class="container-header-right-lineHeight"></span>
+                        <div class="box__info--account">
+                            <div class="box__box__info--account-left">
+                                <small>Good Morning</small>
+                                <span class="name__account">
+                                    Thanh Nguyen
+                                </span>
+                            </div>
+                            <div class="box__image--avatarAccount">
+                                <img src="../images/logo_admin.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<%- include(body) %>

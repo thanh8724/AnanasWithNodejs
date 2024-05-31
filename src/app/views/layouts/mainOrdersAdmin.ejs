@@ -1,0 +1,212 @@
+<link rel="stylesheet" href="../styles-admin/dashboard.css">
+<link rel="stylesheet" href="../styles-admin/showHiddenNavBar.css">
+<link rel="stylesheet" href="../styles-admin/orders.css">
+<link rel="stylesheet" href="../styles-admin/base.css">
+<!-- <link rel="stylesheet" href="../styles-admin/accounts.css"> -->
+<link rel="stylesheet" href="../styles-admin/products.css">
+<link rel="stylesheet" href="../styles-admin/popup-addItem.css">
+<link rel="stylesheet" href="../styles-admin/popup-addProduct.css">
+<link rel="stylesheet" href="../styles-admin/loading-tiktok.css">
+<link rel="stylesheet" href="../styles-admin/section-update.css">
+<link rel="stylesheet" href="../styles/toastMessage.css">
+<style>
+    .toast__error+.toast__error {
+        margin-top: 15px !important;
+    }
+
+    .toast__success+.toast__success {
+        margin-top: 15px !important;
+    }
+    .selectUpdateBill {
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cantNotUpdate {
+        width: 100%;
+        padding: 13px 20px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 10px;
+    }
+    #containerUpdateOrder {
+        min-height: 500px;
+    }
+    #containerUpdateOrder form {
+        min-height: 490px !important;
+    }
+    .boxNameProductPerBill {
+        display: flex;
+        flex-direction: column;
+    }
+    .main__content--container{
+        min-height: 860px !important;
+    }
+</style>
+<!-- content start -->
+<div class="container__content container__content--main" style=" transform: translateX(0%) !important;">
+    <div class="container__content--orders">
+        <div class="content__orders--top">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">All Orders</h3>
+                <span class="content__orders--top-text2">28 New Orders</span>
+            </div>
+            <div class="content__orders--top-right">
+                <input type="date" value="2023-12-29" class="datePicker">
+                <span>To</span>
+                <input type="date" value="2024-01-22" class="datePicker">
+            </div>
+        </div>
+        <div class="content__orders--bottom">
+            <% if (bills.length == 0) { %>
+                <h1 style="margin: 24px;">BÁN Ế QUÁ NÊN CHƯA CÓ AI MUA =>>> KHÔNG CÓ BILLS</h1>
+            <% } else { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% bills.forEach(item => { %>
+                            <tr>
+                                <td>#<%= item.id %></td>
+                                <td><%= item.receiver %></td>
+                                <td><%= item.address %></td>
+                                <td><%= item.timeOrder %></td>
+                                <td><%= item.totalAmount.toLocaleString('vi-VN') %>VNĐ</td>
+                                <td class="<%= item.status %>"><%= item.status %></td>
+                                <td class="view-order create">
+                                    <form action="/renderFormOrder" method="post" id="formUpdateOrder">
+                                        <input type="text" name="idOrder" style="display: none;" value="<%= item.id %>">
+                                        <button type="submit">View</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+        </div>
+        <div class="content__orders--pagination">
+        </div>
+    </div>
+</div>
+<!-- content end -->
+
+<!-- content update start -->
+<section class="container__content container__content2" style="transform: translateX(100%);" id="containerUpdateOrder">
+    <div class="container__content--orders">
+        <div class="content__orders--top" style="display: flex; align-items: center;">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">Detail & Updates</h3>
+                <span class="content__orders--top-text2">Dashboard / <span style="color: #de2e6c;">Update
+                        Order</span></span>
+            </div>
+        </div>
+        <form class="content__orders--bottom content__orders--bottom2" id="formUpdate" action="/updateOrder" method="post">
+            <input type="text" name="statusOldOrder" id="status-id__OldOrder" style="display: none;">
+            <input type="text" name="idOrder" id="status-id__OldOrder" style="display: none;">
+            <div class="content__orders--bottom-left width35">
+                <span class="content__orders--bottom-left--title">
+                    Receiver
+                </span>
+                <div class="boxInfomation-order">
+                    <div class="boxInfomation-order--item">
+                        <span>Tên người nhận:</span>
+                        <span class="nameReceiver infoReceiver"></span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Email:</span>
+                        <span class="emailReceiver infoReceiver"></span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Điện thoại:</span>
+                        <span class="phoneReceiver infoReceiver"></span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Địa chỉ:</span>
+                        <span class="addressReceiver infoReceiver"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="content__orders--bottom-right width65">
+                <span class="content__orders--bottom-left--title">
+                    Order Infomation
+                </span>
+                <div class="boxInfomation-order boxInfomation-order2 relative">
+                    <div class="boxInfomation-order--item">
+                        <span>Tên mặt hàng:</span>
+                        <div class="boxNameProductPerBill">
+                            
+                        </div>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Phương thức vận chuyển:</span>
+                        <span class="infoReceiver infoShipping">Giao Hàng Nhanh</span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Mã giảm giá:</span>
+                        <span class="infoReceiver">Không có</span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Phương thức thanh toán:</span>
+                        <span class="infoReceiver infoPayment">Tiền mặt</span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Ngày Đặt Hàng:</span>
+                        <span class="infoReceiver infoTime"></span>
+                    </div>
+                    <div class="boxInfomation-order--item">
+                        <span>Địa chỉ nhận:</span>
+                        <span class="infoReceiver infoAddress"></span>
+                    </div>
+                    <!-- <div class="boxQrCode">
+                                    <img src="images/qrCode.jpg" alt="">
+                                </div> -->
+                    <div class="form__group-normal">
+                        <label for="" class="form__label">Trạng thái:</label>
+                        <div class="selectUpdateBill" style="width: 100%;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- box button -->
+            <div class="content__orders--bottom2-boxAction">
+                <span class="exitUpdate">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                    Exit
+                </span>
+                <button class="buttonUpdate" type="submit" id="buttonUpdateOrder" style="background-color: #AECCCF; color: black;">Update</button>
+                <!-- <button class="buttonUpdate buttonDeleteOrder">Delete Order</button> -->
+            </div>
+        </form>
+    </div>
+</section>
+<!-- content update end -->
+<footer>
+    <span>
+        Copyright © Designed & Developed by <span style="color: #de2e6c;">Nguyen Thanh🖖</span> 2024
+    </span>
+</footer>
+<div class="container__toast" style="height: 150px;">
+</div>
+</div>
+</div>
+</body>
+
+</html>
+<script src="../js/admin/indexDashboard.js"></script>
+<script src="../js/admin/base.js"></script>
+<script> var exports = {}; </script>
+<script type="module" src="../public/ts/adminOrder.js"></script>
+<script type="module" src="../public/ts/toastMessage.js"></script>

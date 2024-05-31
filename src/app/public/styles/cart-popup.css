@@ -1,0 +1,291 @@
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.popup-cart {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.479);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .25s ease;
+}
+.popup__cart--container {
+    width: 30%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 30px 0;
+    transition: var(--trans-bounce2);
+    transform: translateX(500px);
+}
+.popup__cart--top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 30px 0;
+}
+.close-popup {
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.close-popup:hover {
+    color: red;
+}
+.popup__cart--title {
+    font-size: 25px;
+    font-weight: 800;
+}
+.popup__cart--banner {
+    width: 100%;
+    height: 40px;
+    background-color: #bdbce6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 20px 0;
+}
+.container__showProducts {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 0 20px;
+    gap: 10px;
+    overflow-y: scroll;
+}
+.container__showProducts::-webkit-scrollbar {
+    width: 10px; /* Chiều rộng thanh cuộn */
+}
+
+.container__showProducts::-webkit-scrollbar-track {
+    background-color: inherit; /* Màu nền của track */
+}
+
+.container__showProducts::-webkit-scrollbar-thumb {
+    background-color: #ea3869; /* Màu nền của thumb */
+    border-radius: 5px; /* Góc tròn cho thumb */
+}
+.container__showProducts--item {
+    width: 100%;
+    height: 100px;
+    /* background-color: orangered;  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.box__image--item {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.box__image--item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.name__item--popup {
+    width: 100px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.number__item--popup {
+    width: 40px;
+    height: auto;
+    border: none;
+    background-color: white;
+    padding: 0 15px;
+    pointer-events: none;
+}
+input::-webkit-inner-spin-button {
+    display: none;
+}
+/* .price__product--popup{
+
+} */
+.delete__product-popup{
+    cursor: pointer;
+}
+.cartPopup__bottom {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    padding: 30px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    transition: var(--trans-bounce);
+}
+.hidden__cartPopup--bottom {
+    position: absolute;
+    font-size: 25px;
+    top: 68%;
+    right: 20px;
+    cursor: pointer;
+    transition: var(--trans-bounce);
+}
+.noti_point {
+    font-size: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.box__totalPopup-cart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total-popup,
+.total-popup-title {
+    font-size: 18px;
+    font-weight: 800;
+}
+.total-popup-title {
+    font-size: 16px;
+}
+.payment-on-delivery {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    font-weight: 300;
+}
+.button__checkOut {
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #ea3869;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+.cartPopup__bottom--noti {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.popupCart-empty {
+    width: 30%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 30px 0;
+    transform: translateX(5300px);
+    transition: var(--trans-bounce2);
+}
+.boximg__cartEmpty {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.boximg__cartEmpty img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cartEmpty__text {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+}
+.cartEmpty__text1 {
+    font-size: 16px;
+    font-weight: 800;
+}
+.cartEmpty__text2 {
+    font-size: 15px;
+    font-weight: 300;
+}
+.buyNow {
+    width: 60%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #ea3869;
+    color: white;
+}
+
+
+.opacity1 {
+    opacity: 1;
+    visibility: visible;
+}
+.opacity0 {
+    opacity: 0;
+    visibility: hidden;
+}
+.transformHiddenY {
+    transform: translateY(300px);
+    display: none;
+}
+.transX0 {
+    transform: translateX(0);
+}
+.displayNone {
+    /* display: none; */
+    /* transform: translateX(460px); */
+    /* transform: translateX(1200px); */
+    
+}
+.icon-hidden_total {
+    top: 95% !important;
+    transform: rotate(180deg) !important;
+}
+.overflowHidden {
+    overflow: hidden;
+}
+.showContentCartEmpty {
+    transform: translateX(0) !important;
+    transition: var(--trans-bounce2);
+}
+.hiddenContentPopupCart {
+    transform: translateX(1000px) !important;
+    transition: var(--trans-bounce2);
+}
+.popup__cart--container-active {
+    transform: translateX(420px);
+    transition: var(--trans-bounce2);
+}

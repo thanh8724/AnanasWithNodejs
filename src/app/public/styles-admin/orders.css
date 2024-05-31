@@ -1,0 +1,106 @@
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+    --color1: #AECCCF;
+    --color2: #6C9CA4;
+    --box-shadow1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    --box-shadow3: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --box-shadow4:0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --box-shadow5: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.container__content--orders {
+    width: 100%;
+    min-height: 500px;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content__orders--top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.content__orders--top-left {
+    color: #de2e6c;
+}
+/* .button-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #de2e6c;
+}
+.content__orders--top-left ion-icon {
+    font-size: 30px;
+} */
+.content__orders--top-text1 {
+    color: black;
+    font-size: 23px;
+    font-weight: 800;
+}
+.content__orders--top-text2 {
+    display: inline-block;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+.content__orders--top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.content__orders--top-right span {
+    font-weight: 700;
+}
+.content__orders--bottom {
+    width: 100%;
+    min-height: 310px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow2);
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+tbody tr:nth-child(even) {
+    background-color: #eee;
+}  
+tbody td {
+    padding: 20px 0;
+}
+th,
+td {
+    padding: 15px !important;
+}
+th {
+    border-radius: 10px;
+    color: #de2e6c;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+td {
+    text-align: center;
+}
+.content__orders--pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content__orders--pagination span {
+    font-weight: 12px;
+    font-weight: 700;
+}
+.view-order {
+    color: blue;
+    cursor: pointer;
+}

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Poppins:wght@200;600&family=Roboto:ital,wght@1,500&family=Work+Sans:wght@300;500;900&display=swap');
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+body {
+    width: 100vw;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    background-color: #fbfafb;
+    /* padding: 20px 20px; */
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 10px; /* Chiều rộng thanh cuộn */
+}
+body::-webkit-scrollbar-track {
+    background-color: inherit; /* Màu nền của track */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px; /* Góc tròn cho thumb */
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+    --color1: #AECCCF;
+    --color2: #6C9CA4;
+    --box-shadow1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    --box-shadow3: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --box-shadow4:0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --box-shadow5: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.main__right--content {
+    display: flex;
+    flex-direction: column;
+    transition: var(--trans-bounce2);
+}
+.main__right-title {
+    font-weight: 700;
+    background-color: white;
+}
+.main__right--container {
+    width: 100%;
+    min-height: 20px;
+}
+.container--item{
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.item__content-left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item__content-left span {
+    font-size: 15px;
+    font-weight: 400;
+    color: gray;
+}
+.namephone {
+    display: flex;
+    gap: 5px;
+}
+.name {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: black !important;
+}
+.item__content-right{
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.edit-address {
+    font-weight: 600;
+    color: orangered;
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+}
+.buttonAddress-default {
+    padding: 10px 15px;
+    border-radius: 18px;
+    color: orangered;
+    border: 1px solid orangered;
+    font-weight: 500;
+}
+.addressDefault .buttonAddress-default {
+    border: 1px solid black !important;
+    background-color: inherit;
+    color: black;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.4;
+}
+.addressDefault .edit-addressNone {
+    cursor: auto;
+    user-select: none;
+    opacity: 0.5;
+    color: gray;
+    font-size: 15px;
+    font-weight: 600;
+}
+.boxAction {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+.button__add-address {
+    height: 100%;
+    padding: 0 15px;
+    background-color: orangered;
+    border-radius: 20px;
+    color: white;
+}
+.show-popup__add-address {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.popup__add-address {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.57);
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--trans-bounce2);
+}
+.addAddress-title {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+.close-popupAddress {
+    cursor: pointer;
+}
+.togglePopupAddress {
+    cursor: pointer;
+}
+.popup__add-address form {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form__message {
+    font-size: 14px;
+    color: #e7265c;
+}
+.errorInput {
+    border: 1px solid #e7265c !important;
+    box-shadow: none !important;
+}

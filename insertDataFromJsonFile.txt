@@ -1,0 +1,57 @@
+interface Product {
+  id: number;
+  imageProduct: string;
+  nameProduct: string;
+  priceProduct: number;
+  viewProduct: number;
+  quantitySold: number;
+  categoriesProduct: number;
+  descriptionProduct: string;
+}
+async function readProductsData(): Promise<any> {
+  const data = await fs.readFile('./src/json/products.json', 'utf-8');
+  return JSON.parse(data) as Product[];
+}
+async function insertProducts(pool: mysql.Pool, products: Product[]) {
+  const sql = `INSERT INTO products (
+    id,
+    imageProduct,
+    nameProduct,
+    priceProduct,
+    viewProduct,
+    quantitySold,
+    categoriesProduct,
+    descriptionProduct
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  for (const product of products) {
+    const values = [
+    product.id,
+      product.imageProduct,
+      product.nameProduct,
+      product.priceProduct,
+      product.viewProduct,
+      product.quantitySold,
+      product.categoriesProduct,
+      product.descriptionProduct,
+    ];
+    await pool.query(sql, values);
+  }
+}
+async function main() {
+  const pool = await connectionDataBase();
+  const products = await readProductsData();
+  console.log(products);
+  
+
+  try {
+    await insertProducts(pool, products.products);
+    console.log('Products inserted successfully!');
+  } catch (error) {
+    console.error('Error inserting products:', error);
+  } finally {
+    await pool.end();
+  }
+}
+
+main();

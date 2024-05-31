@@ -1,0 +1,396 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "nameCategory": "GIÀY",
+      "imageCategory": "https://ananas.vn/wp-content/uploads/Menu_Nam.jpg",
+      "descriptionCategory": ""
+    },
+    {
+      "id": 2,
+      "nameCategory": "ÁO",
+      "imageCategory": "https://ananas.vn/wp-content/uploads/Thumbnail-1.jpg",
+      "descriptionCategory": ""
+    },
+    {
+      "id": 3,
+      "nameCategory": "OUTLET SALE",
+      "imageCategory": "https://ananas.vn/wp-content/uploads/Menu_Sale-off.jpg",
+      "descriptionCategory": ""
+    },
+    {
+      "id": 4,
+      "nameCategory": "THỜI TRANG & PHỤ KIỆN",
+      "imageCategory": "https://ananas.vn/wp-content/uploads/Menu_Phu-kien.jpg",
+      "descriptionCategory": ""
+    },
+    {
+      "id": 58,
+      "nameCategory": "test",
+      "imageCategory": "/uploads/1712394343542.jpg",
+      "descriptionCategory": "mo ta"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "imageProduct": "/images-product/Pro_AV00149_1.jpg",
+      "nameProduct": "BASAS WORKADAY - LOW TOP - BLACK",
+      "priceProduct": 580000,
+      "viewProduct": 500,
+      "quantitySold": 400,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 2,
+      "imageProduct": "/images-product/Pro_AV00150_1.jpg",
+      "nameProduct": "BASAS WORKADAY - LOW TOP - REAL TEAL",
+      "priceProduct": 580000,
+      "viewProduct": 600,
+      "quantitySold": 340,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 3,
+      "imageProduct": "/images-product/Pro_AV00151_1.jpg",
+      "nameProduct": "BASAS WORKADAY - HIGH TOP - REAL TEAL",
+      "priceProduct": 650000,
+      "viewProduct": 1200,
+      "quantitySold": 300,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 4,
+      "imageProduct": "/images-product/Pro_AV00152_1.jpg",
+      "nameProduct": "BASAS WORKADAY - HIGH TOP - BLACK",
+      "priceProduct": 650000,
+      "viewProduct": 900,
+      "quantitySold": 300,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 5,
+      "imageProduct": "/images-product/pro_AV00142_1.jpg",
+      "nameProduct": "BASAS EVERGREEN - LOW TOP - EVERGREEN",
+      "priceProduct": 580000,
+      "viewProduct": 500,
+      "quantitySold": 100,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 6,
+      "imageProduct": "/images-product/pro_AV00144_1.jpg",
+      "nameProduct": "BASAS EVERGREEN - MULE - EVERGREEN",
+      "priceProduct": 580000,
+      "viewProduct": 850,
+      "quantitySold": 800,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 7,
+      "imageProduct": "/images-product/pro_AV00146_1.jpg",
+      "nameProduct": "BASAS EVERGREEN - HIGH TOP - EVERGREEN",
+      "priceProduct": 650000,
+      "viewProduct": 980,
+      "quantitySold": 340,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 8,
+      "imageProduct": "/images-product/pro_AV00136_1.jpg",
+      "nameProduct": "BASAS RAW - HIGH TOP - RUSTIC",
+      "priceProduct": 650000,
+      "viewProduct": 1290,
+      "quantitySold": 900,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 9,
+      "imageProduct": "/images-product/pro_AV00135_1.jpg",
+      "nameProduct": "BASAS RAW - LOW TOP - RUSTIC",
+      "priceProduct": 610000,
+      "viewProduct": 800,
+      "quantitySold": 120,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 10,
+      "imageProduct": "/images-product/Pro_AV00099_1.jpg",
+      "nameProduct": "BASAS BUMPER GUM EXT NE - HIGH TOP - BLACK/GUM",
+      "priceProduct": 650000,
+      "viewProduct": 1300,
+      "quantitySold": 500,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 11,
+      "imageProduct": "/images-product/Pro_AV00098_1.jpg",
+      "nameProduct": "BASAS BUMPER GUM EXT NE - LOW TOP - BLACK/GUM",
+      "priceProduct": 580000,
+      "viewProduct": 890,
+      "quantitySold": 90,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 12,
+      "imageProduct": "/images-product/Pro_AV00198_1.jpg",
+      "nameProduct": "URBAS SC - MULE - ALOE WASH",
+      "priceProduct": 580000,
+      "viewProduct": 1300,
+      "quantitySold": 699,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 13,
+      "imageProduct": "/images-product/Pro_AV00202_1.jpg",
+      "nameProduct": "URBAS SC - MULE - DUSTY BLUE",
+      "priceProduct": 620000,
+      "viewProduct": 450,
+      "quantitySold": 50,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 14,
+      "imageProduct": "/images-product/Pro_A6T015_1.jpeg",
+      "nameProduct": "TRACK 6 2.BLUES - LOW TOP - BLUEWASH",
+      "priceProduct": 1290000,
+      "viewProduct": 2500,
+      "quantitySold": 1299,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 15,
+      "imageProduct": "/images-product/Pro_A6T016_1.jpeg",
+      "nameProduct": "TRACK 6 JAZICO - LOW TOP - ROYAL WHITE",
+      "priceProduct": 1190000,
+      "viewProduct": 2300,
+      "quantitySold": 1199,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 16,
+      "imageProduct": "/images-product/Pro_AV00182_1.jpeg",
+      "nameProduct": "PATTAS TOMO - HIGH TOP - OFFWHITE",
+      "priceProduct": 750000,
+      "viewProduct": 1909,
+      "quantitySold": 1309,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 17,
+      "imageProduct": "/images-product/pro_A6T009_1.jpg",
+      "nameProduct": "TRACK 6 CLASS E - LOW TOP - CRAFTSMAN BLUE",
+      "priceProduct": 1190000,
+      "viewProduct": 8009,
+      "quantitySold": 2009,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 18,
+      "imageProduct": "/images-product/pro_A6T010_1.jpg",
+      "nameProduct": "TRACK 6 CLASS E - LOW TOP - BOTANIST GREEN",
+      "priceProduct": 1190000,
+      "viewProduct": 4879,
+      "quantitySold": 2004,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 19,
+      "imageProduct": "/images-product/pro_track6_A6T002_1.jpg",
+      "nameProduct": "TRACK 6 TRIPLE WHITE - LOW TOP - WHITE",
+      "priceProduct": 990000,
+      "viewProduct": 879,
+      "quantitySold": 204,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 20,
+      "imageProduct": "/images-product/pro_A67008_1.jpg",
+      "nameProduct": "TRACK 6 UTILITY GUM SOLE - LOW TOP - NAVY PEONY/GUM",
+      "priceProduct": 1090000,
+      "viewProduct": 479,
+      "quantitySold": 298,
+      "categoriesProduct": 1,
+      "descriptionProduct": "Gender: Unisex Size run: 35 – 46 Upper: Canvas NE Outsole: Rubber Có thêm 01 bộ dây đi kèm"
+    },
+    {
+      "id": 21,
+      "imageProduct": "/images-product/Thumbnail-1.jpg",
+      "nameProduct": "GRAPHIC TEE - LOGOS PACKED - SNOW WHITE",
+      "priceProduct": 350000,
+      "viewProduct": 2000,
+      "quantitySold": 1850,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 22,
+      "imageProduct": "/images-product/Thumbnail.jpg",
+      "nameProduct": "GRAPHIC TEE - SKATE 4P - SNOW WHITE",
+      "priceProduct": 350000,
+      "viewProduct": 3479,
+      "quantitySold": 498,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 23,
+      "imageProduct": "/images-product/Thumbnail-2.jpg",
+      "nameProduct": "GRAPHIC TEE - DANCE TILL SUNRISE - JET BLACK",
+      "priceProduct": 350000,
+      "viewProduct": 1099,
+      "quantitySold": 998,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 24,
+      "imageProduct": "/images-product/Thumbnail-3.jpg",
+      "nameProduct": "GRAPHIC TEE - THE GUITAR SINGS - JET BLACK",
+      "priceProduct": 350000,
+      "viewProduct": 1299,
+      "quantitySold": 798,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 25,
+      "imageProduct": "/images-product/Thumbnail-5.jpg",
+      "nameProduct": "GRAPHIC TEE - 3 DAYS TO REMEMBER - VIBRANT ORANGE",
+      "priceProduct": 350000,
+      "viewProduct": 999,
+      "quantitySold": 548,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 26,
+      "imageProduct": "/images-product/pro_basictee_ABT00011_1-1.jpg",
+      "nameProduct": "BASIC TEE - ANANAS CROPPED SYMBOL - BUNGEE CORD",
+      "priceProduct": 150000,
+      "viewProduct": 479,
+      "quantitySold": 298,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 27,
+      "imageProduct": "/images-product/Hover-5.jpg",
+      "nameProduct": "GRAPHIC TEE - LOGOS PACKED - VIBRANT ORANGE",
+      "priceProduct": 350000,
+      "viewProduct": 1979,
+      "quantitySold": 998,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 28,
+      "imageProduct": "/images-product/Thumbnail-7-1.jpg",
+      "nameProduct": "LONG SLEEVE GRAPHIC TEE - LOVE, PEACE & MUSIC - WHITE",
+      "priceProduct": 390000,
+      "viewProduct": 879,
+      "quantitySold": 550,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 29,
+      "imageProduct": "/images-product/Thumbnail-7-2.jpg",
+      "nameProduct": "LONG SLEEVE GRAPHIC TEE - LOVE, PEACE & MUSIC - JET BLACK",
+      "priceProduct": 390000,
+      "viewProduct": 979,
+      "quantitySold": 798,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 30,
+      "imageProduct": "/images-product/pro_AGT0020_1.jpg",
+      "nameProduct": "GRAPHIC POCKET TEE - DORAEMON 50 YEARS - CLOUD DANCER",
+      "priceProduct": 390000,
+      "viewProduct": 779,
+      "quantitySold": 333,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 31,
+      "imageProduct": "/images-product/AGT0012_1.jpg",
+      "nameProduct": "HIPHOP GRAPHIC TEE - EST. 17' ANANAS - ERMINE",
+      "priceProduct": 200000,
+      "viewProduct": 479,
+      "quantitySold": 299,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 32,
+      "imageProduct": "/images-product/AGT0011_1-1.jpg",
+      "nameProduct": "HIPHOP GRAPHIC TEE - EST. '17 ANANAS - BLACK",
+      "priceProduct": 200000,
+      "viewProduct": 1079,
+      "quantitySold": 998,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 33,
+      "imageProduct": "/images-product/AGT0008_1.jpg",
+      "nameProduct": "HIPHOP GRAPHIC TEE - OUTLINE TYPO - KETCHUP",
+      "priceProduct": 200000,
+      "viewProduct": 1099,
+      "quantitySold": 900,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 34,
+      "imageProduct": "/images-product/AGT0009_2.jpg",
+      "nameProduct": "HIPHOP GRAPHIC TEE - ANANAS SYMBOL - KETCHUP",
+      "priceProduct": 200000,
+      "viewProduct": 679,
+      "quantitySold": 598,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 35,
+      "imageProduct": "/images-product/AGT0018_1.jpg",
+      "nameProduct": "GRAPHIC TEE - LUCKY LUKE TYPO - CHILI PEPPER",
+      "priceProduct": 200000,
+      "viewProduct": 799,
+      "quantitySold": 498,
+      "categoriesProduct": 2,
+      "descriptionProduct": "Giới tính: Unisex Form dáng: Regular Chất liệu: Single Jersey, định lượng 220GSM Thành phần chất liệu: 100% Cotton Size: S – M – L – XL Hoạ tiết: Logos Packed Sử dụng phương pháp in lụa."
+    },
+    {
+      "id": 36,
+      "imageProduct": "/uploads/1712339131973.jpg",
+      "nameProduct": "giay moi",
+      "priceProduct": 290000,
+      "viewProduct": 0,
+      "quantitySold": 0,
+      "categoriesProduct": 2,
+      "descriptionProduct": "khong co gi de che"
+    }
+  ]
+}

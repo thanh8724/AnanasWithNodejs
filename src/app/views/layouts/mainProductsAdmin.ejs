@@ -1,0 +1,258 @@
+<link rel="stylesheet" href="../styles-admin/dashboard.css">
+<link rel="stylesheet" href="../styles-admin/showHiddenNavBar.css">
+<link rel="stylesheet" href="../styles-admin/orders.css">
+<link rel="stylesheet" href="../styles-admin/base.css">
+<link rel="stylesheet" href="../styles-admin/accounts.css">
+<link rel="stylesheet" href="../styles-admin/products.css">
+<link rel="stylesheet" href="../styles-admin/popup-addItem.css">
+<link rel="stylesheet" href="../styles-admin/popup-addProduct.css">
+<link rel="stylesheet" href="../styles-admin/loading-tiktok.css">
+<link rel="stylesheet" href="../styles-admin/section-update.css">
+<link rel="stylesheet" href="../styles/toastMessage.css">
+<style>
+    .toast__error+.toast__error {
+        margin-top: 15px !important;
+    }
+
+    .toast__success+.toast__success {
+        margin-top: 15px !important;
+    }
+</style>
+    <!-- content start -->
+    <div class="container__content container__content--main" style="transform: translateX(0) !important;">
+        <div class="container__content--orders">
+            <div class="content__orders--top" style="display: flex; align-items: center;">
+                <div class="content__orders--top-left">
+                    <h3 class="content__orders--top-text1">All Products</h3>
+                    <!-- <span class="content__orders--top-text2"></span> -->
+                </div>
+                <div class="content__orders--top-right content__orders--top-right-search">
+                    <div class="form__group">
+                        <button class="button-search">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                        <input type="text" name="search" class="form__input inputSearch" id="inputSearch"
+                            placeholder="Search">
+                        <!-- <label for="quantity" class="label__place">Số lượng</label> -->
+                    </div>
+                    <button class="addNewItem">
+                        <ion-icon name="add-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="content__orders--bottom">
+                <table class="tableProducts">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>General Information</th>
+                            <th>Name Product</th>
+                            <th>Price Product</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(item => { %>
+                            <tr>
+                                <td>#<%= item.id %></td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="<%= item.imageProduct %>" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Quantity Items</span>
+                                        <span class="nameUser-name" style="display: flex; justify-content: flex-start;">20 Items</span>
+                                    </div>
+                                </td>
+                                <td style="word-wrap: break-word;"><%= item.nameProduct %></td>
+                                <td><%= Number(item.priceProduct).toLocaleString('vi-VN') %> VND</td>
+                                <td class="td-action">
+                                    <form action="/popupUpdateProduct" method="POST" id="updateProduct">
+                                        <input name="idProduct" type="text" style="display: none;" value="<%= item.id %>">
+                                        <button type="submit">
+                                            <ion-icon class="create" name="create-outline"></ion-icon>
+                                        </button>
+                                    </form>
+                                    |
+                                    <form action="/deleteProduct" method="post" id="formDeleteProduct">
+                                        <input name="idProduct" type="text" style="display: none;" value="<%= item.id %>">
+                                        <button type="submit">
+                                            <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                        </button>
+                                    </form>
+                                </td>
+                                </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content__orders--pagination">
+            </div>
+        </div>
+    </div>
+    <!-- content end -->
+    
+    <!-- content update start -->
+    <section class="container__content container__content2 bottom0" style="transform: translateX(100%);">
+        <span id="idCategory" style="display: none;"></span>
+        <div class="container__content--orders">
+            <div class="content__orders--top" style="display: flex; align-items: center;">
+                <div class="content__orders--top-left">
+                    <h3 class="content__orders--top-text1">Detail & Updates</h3>
+                    <span class="content__orders--top-text2">Dashboard / <span style="color: #de2e6c;">Update
+                            Product</span></span>
+                </div>
+            </div>
+            <form id="formUpdateProduct" class="content__orders--bottom content__orders--bottom2" method="post" action="/postUpdateProduct" enctype="multipart/form-data">
+                <div class="content__orders--bottom-left">
+                    <input type="text" style="display: none;" name="idProductUpdate" id="idProductUpdate">
+                    <input type="text" style="display: none;" name="imageOldProduct" id="imageOldProduct">
+                    <div class="form__group-normal">
+                        <label for="" class="form__label">Category</label>
+                        <select name="selectCategory" id="selectCategory" class="form__input form__inputSelect">
+                        </select>
+                    </div>
+                    <div class="form__group-normal ">
+                        <label for="nameProductUp" class="form__label">Name Product</label>
+                        <input type="text" name="nameProductUp" id="nameProductUp" class="form__input"
+                            placeholder="Name Product">
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__group-normal ">
+                        <label for="nameProductUp" class="form__label">Price Product</label>
+                        <input type="number" name="priceProductUp" id="priceProductUp" class="form__input"
+                            placeholder="Price Product">
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__group-normal">
+                        <label for="descriptionProduct" class="form__label">Description Category</label>
+                        <textarea class="form__input" name="descriptionProduct" id="descriptionProductUp" cols="50"
+                            rows="12" placeholder="Description"></textarea>
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="content__orders--bottom-right">
+                    <div class="container__upLoadImage">
+                        <div class="container__upLoadImage--boxImg">
+                            <img id="imageProductShowUp"
+                                src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt="">
+                        </div>
+                        <div class="container__upLoadImage--boxButton">
+                            <input type="file" class="upLoadAvatar" name="upLoadImageProduct" id="upDateAvatar">
+                            <button class="button__del--avatar">Delete</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="content__orders--bottom2-boxAction">
+                    <span class="exitUpdate">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        Exit
+                    </span>
+                    <button id="buttonUpdateProduct" class="buttonUpdate" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer-product--limited">
+            <span>
+                Copyright © Designed & Developed by <span style="color: #de2e6c;">Nguyen Thanh🖖</span> 2024
+            </span>
+        </footer>
+    </section>
+    <!-- content update end -->
+    <footer class="margin--top80">
+        <span>
+            Copyright © Designed & Developed by <span style="color: #de2e6c;">Nguyen Thanh🖖</span> 2024
+        </span>
+    </footer>
+    </div>
+    <!-- popup add item -->
+    <section class="popup-addItem closePopupAddItem">
+        <div class="popup-addItem__content">
+            <div class="addItem__content--top">
+                <span class="addItem__content--title">
+                    Add New Product
+                </span>
+                <button class="closePopup closePopupAddItem">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="addItem__content--main">
+                <form action="/addNewProduct" method="POST" class="form" id="formAddProduct" enctype="multipart/form-data">
+                    <div class="form__group">
+                        <label for="" class="form__label">Belongs To The Category</label>
+                        <select name="slectCategory" id="selectCategory" class="form__input form__inputSelect">
+                            <% categories.forEach(item => { %>
+                                <option value="<%= item.id %>"><%= item.nameCategory %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label for="nameProduct" class="form__label">Name Product</label>
+                        <input type="text" name="nameProduct" id="nameProduct" class="form__input"
+                            placeholder="Name Product">
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__group">
+                        <label for="priceProduct" class="form__label">Price Product</label>
+                        <input type="text" name="priceProduct" id="priceProduct" class="form__input"
+                            placeholder="Price Product">
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__group">
+                        <label for="descriptionProduct" class="form__label">Description Product</label>
+                        <textarea class="form__input" name="descriptionProduct" id="descriptionProduct" cols="50" rows="12"
+                            placeholder="Description" style="height: 75px !important;"></textarea>
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="containerAddImageProduct">
+                        <input type="file" name="inputAvatarproduct" id="inputAvatarproduct">
+                        <input type="file" name="inputImagesProduct" id="inputImagesProduct" multiple>
+                    </div>    
+                    <div class="form__boxButton">
+                        <span class="popup-back closePopupAddItem">Back</span>
+                        <button class="button__addItem" id="buttonAddProduct" type="submit">
+                            Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="container__toast" style="height: 150px;">
+        <!-- <div class="toast toast__success">
+                    <div class="toast__icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">Đăng nhập thành công!</h3>
+                        <span class="toast__message">Vào trang user để kiểm tra thông tin tài khoản!</span>
+                    </div>
+                    <div class="toast__close">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div> -->
+    </div>
+    <div id="loadingTiktok">
+        <div id="js-preloader" class="js-preloader">
+            <div class="preloader-inner">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+    
+    </html>
+    <script src="../js/admin/indexDashboard.js"></script>
+    <script src="../js/admin/base.js"></script>
+    <!-- <script src="../js/admin/pagination.js"></script> -->
+    <!-- <script src="../js/admin/products.js"></script> -->
+    <script> var exports = {}; </script>
+    <script type="module" src="../public/ts/adminProductsHandles.js"></script>
+    <script type="module" src="../public/ts/toastMessage.js"></script>

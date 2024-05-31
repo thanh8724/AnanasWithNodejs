@@ -1,0 +1,132 @@
+footer {
+    width: 100%;
+    height: 70vh;
+    background-color: #111729;
+    padding: 80px 160px;
+    display: flex;
+    gap: 50px;
+    position: relative;
+}
+.footer__left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer__left--boxImg {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.footer__left--boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.footer__left a {
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to right top,#fc6c8f,#ffb86c);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 600;
+    padding: 10px;
+    border: 2px solid #fc6c8f;
+    border-radius: 30px;
+}
+.footer__right {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.footer__right--top {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__right--ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer__right--ul a {
+    color: #cccccc;
+    font-size: 16px;
+    text-decoration: none;
+    transition: var(--trans-bounce);
+}
+.footer__right--ul a:hover {
+    color: orangered;
+    font-size: 16px;
+    text-decoration: none;
+}
+.footer__right--li-title {
+    width: 100%;
+    height: auto;
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    transition: var(--trans-bounce) !important;
+}
+.footer__right--bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.icon_link {
+    display: flex;
+    gap: 10px;
+}
+.form__email--footer {
+    width: 90%;
+    position: relative;
+}
+.input__email--footer {
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+    padding: 0 50px 0 20px;
+    background-color: white;
+    border: none;
+}
+.btn__submit--footer {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 100rem;
+    right: 0;
+    border: none;
+    background-image: linear-gradient(to right top,#fc6c8f,#ffb86c);
+    cursor: pointer;
+}
+.btn__submit--footer ion-icon {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.boxImg__logo--footer {
+    width: 30%;
+    height: auto;
+    overflow: hidden;
+}
+.copyright {
+    width: 100%;
+    color: #555555;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    text-align: center;
+}

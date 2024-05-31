@@ -1,0 +1,68 @@
+{
+  "bills": [
+    {
+      "id": 1,
+      "idAccount": 1,
+      "receiver": "Quoc Thanh",
+      "emailReceiver": "quocthanhn87@gmail.com",
+      "phoneReceiver": 352431477,
+      "address": "truong chinh",
+      "adderssSpecific": "tay than, truong chinh",
+      "totalAmount": 810000,
+      "shipping": 0,
+      "status": "Đã giao",
+      "timeOrder": "2024-04-06T09:00:43.000Z",
+      "paymentMethod": "Tiền mặt"
+    },
+    {
+      "id": 2,
+      "idAccount": 1,
+      "receiver": "Quoc Thanh",
+      "emailReceiver": "quocthanhn87@gmail.com",
+      "phoneReceiver": 352431477,
+      "address": "truong chinh",
+      "adderssSpecific": "tay than, truong chinh",
+      "totalAmount": 1940000,
+      "shipping": 0,
+      "status": "Đã giao",
+      "timeOrder": "2024-04-06T09:03:08.000Z",
+      "paymentMethod": "Tiền mặt"
+    },
+    {
+      "id": 3,
+      "idAccount": 1,
+      "receiver": "Nguyen Thah",
+      "emailReceiver": "quocthanhn87@gmail.com",
+      "phoneReceiver": 352431477,
+      "address": "truong chinh",
+      "adderssSpecific": "tay than, truong chinh",
+      "totalAmount": 400000,
+      "shipping": 50000,
+      "status": "Đã giao",
+      "timeOrder": "2024-04-08T07:16:17.000Z",
+      "paymentMethod": "Tiền mặt"
+    }
+  ],
+  "productbill": [
+    {
+      "id": 6,
+      "nameProduct": "HIPHOP GRAPHIC TEE - OUTLINE TYPO - KETCHUP",
+      "idBill": 1
+    },
+    {
+      "id": 7,
+      "nameProduct": "BASAS RAW - LOW TOP - RUSTIC",
+      "idBill": 1
+    },
+    {
+      "id": 8,
+      "nameProduct": "TRACK 6 JAZICO - LOW TOP - ROYAL WHITE",
+      "idBill": 2
+    },
+    {
+      "id": 9,
+      "nameProduct": "PATTAS TOMO - HIGH TOP - OFFWHITE",
+      "idBill": 2
+    }
+  ]
+}

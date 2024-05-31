@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Webstie Icon" type="png" href="../images/Logo_Ananas_Header.svg">
+    <title>Ananas - DiscoverYOU</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/cart-popup.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body onload="">
+    <div class="container__full">
+        <header class="header">
+            <div class="header__top">
+                <div class="header__top--item">
+                    <ion-icon name="cube-outline"></ion-icon>
+                    <a href="#" class="header__top--item-link">Tra cứu đơn hàng</a>
+                </div>
+                <div class="header__top--item">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <a href="#" class="header__top--item-link">Tìm cửa hàng</a>
+                </div>
+                <div class="header__top--item">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <a href="#" class="header__top--item-link">Yêu thích</a>
+                </div>
+                <div class="header__top--item">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <a href="" class="header__top--item-link" id="link_loginHederTop"></a>
+                </div>
+            </div>
+            <div class="header__main">
+                <div class="header__main--boxLogo">
+                    <a href="/">
+                        <img srcset="../images/Logo_Ananas_Header.svg 2x" alt="" class="img__logo--header">
+                    </a>
+                </div>
+                <div class="header__main--menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="button__drop--menu button__drop--menu1">
+                                SẢN PHẨM
+                                <ion-icon class="show_drop_menu" name="chevron-down-outline"></ion-icon>
+                            </a>
+                            <nav class="drop__menu drop__menu1">
+                                <ion-icon class="drop__menu1--this" name="caret-up-outline"></ion-icon>
+                                <ul class="drop__menu--style1 drop__menu--ul">
+                                    <!-- DOM SHow -->
+                                    <% categories.forEach(e=> { %>
+                                        <li>
+                                            <a href="/shop/<%= e.id %>" class="drop__menu--styel1-item">
+                                                <div class="item__box--img">
+                                                    <img src="<%= e.imageCategory %>" alt="" class="img-itemMenu">
+                                                </div>
+                                                <span class="style1-item--title">
+                                                    <%= e.nameCategory %>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <% }) %>
+                                            <!-- <li>
+                                        <a href="" class="drop__menu--styel1-item">
+                                            <div class="item__box--img">
+                                                <img src="../images/Menu_Nu.jpg" alt="" class="img-itemMenu">
+                                            </div>
+                                            <span class="style1-item--title">CHO NỮ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="drop__menu--styel1-item">
+                                            <div class="item__box--img">
+                                                <img src="../images/Menu_Sale-off.jpg" alt="" class="img-itemMenu">
+                                            </div>
+                                            <span class="style1-item--title">OUTLET SALE</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="drop__menu--styel1-item">
+                                            <div class="item__box--img">
+                                                <img src="../images/Menu_Phu-kien.jpg">
+                                            </div>
+                                            <span class="style1-item--title">THỜI TRANG - PHỤ KIỆN</span>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                                <span class="drop__menu1--title">MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ <span
+                                        class="highlight"> DỨA</span> !</span>
+                            </nav>
+                        </li><span class="space"></span>
+                        <li>
+                            <a href="#" class="button__drop--menu button__drop--menu2">
+                                NAM
+                                <ion-icon class="show_drop_menu" name="chevron-down-outline"></ion-icon>
+                            </a>
+                            <div class="drop__menu drop__menu2">
+                                <ion-icon class="drop__menu1--this drop__menu2--this"
+                                    name="caret-up-outline"></ion-icon>
+                                <div class="drop__menu2--boxContent">
+                                    <!-- this is content -->
+                                    <div class="content__drop-menu2__left">
+                                        <span class="content__menu2--title">
+                                            NỔI BẬT
+                                        </span>
+                                        <ul class="drop__menu2--ul drop__menu--ul">
+                                            <li><a href="#">Bán chạy</a></li>
+                                            <li><a href="#">Sản phẩm mới</a></li>
+                                            <li><a href="#">Giảm giá</a></li>
+                                        </ul>
+                                        <ul class="drop__menu2--ul drop__menu--ul">
+                                            <span class="drop__menu2--ul-title">
+                                                Bộ sản phẩm
+                                            </span>
+                                            <li><a href="#">Pattas Living Journey</a></li>
+                                            <li><a href="#">Pattas Polka Dots</a></li>
+                                            <li><a href="#">Basas Evergreen</a></li>
+                                            <li><a href="#">Urbas Ruler</a></li>
+                                            <li><a href="#">Track 6 Class E</a></li>
+                                        </ul>
+                                        <a class="drop__menu2--linked" href="">
+                                            Collaboration
+                                        </a>
+                                    </div>
+                                    <div class="content__drop-menu2__right">
+                                        <div class="drop__menu2--content-shoe">
+                                            <span class="content__menu2--title">
+                                                GIÀY
+                                            </span>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Dòng sản phẩm
+                                                </span>
+                                                <li><a href="#">Basas</a></li>
+                                                <li><a href="#">Vintas</a></li>
+                                                <li><a href="#">Urbas</a></li>
+                                                <li><a href="#">Pattas</a></li>
+                                                <li><a href="#">Creas</a></li>
+                                                <li><a href="#">Track 6</a></li>
+                                            </ul>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Style
+                                                </span>
+                                                <li><a href="#">Hight Top</a></li>
+                                                <li><a href="#">Low Top</a></li>
+                                                <li><a href="#">Slip - on</a></li>
+                                            </ul>
+                                            <a class="drop__menu2--linked" href="">
+                                                Tất cả giày
+                                            </a>
+                                        </div>
+                                        <div class="drop__menu2--content-fashion">
+                                            <span class="content__menu2--title">
+                                                THỜI TRANG & PHỤ KIỆN
+                                            </span>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Nửa trên
+                                                </span>
+                                                <li><a href="#">Basic Tee</a></li>
+                                                <li><a href="#">Graphic Tee</a></li>
+                                                <li><a href="#">Sweatshirt</a></li>
+                                                <li><a href="#">Hoodie</a></li>
+                                            </ul>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Phụ kiện
+                                                </span>
+                                                <li><a href="#">Nón</a></li>
+                                                <li><a href="#">Giây dày</a></li>
+                                                <li><a href="#">Túi</a></li>
+                                                <li><a href="#">Túi Tote</a></li>
+                                            </ul>
+                                            <a class="drop__menu2--linked" href="">
+                                                Xem tất cả
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- this is content -->
+                                </div>
+                                <span class="drop__menu1--title">MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ <span
+                                        class="highlight"> DỨA</span> !</span>
+                            </div>
+                        </li><span class="space"></span>
+                        <li>
+                            <a class="button__drop--menu button__drop--menu2" href="#">
+                                NỮ
+                                <ion-icon class="show_drop_menu" name="chevron-down-outline"></ion-icon>
+                            </a>
+                            <div class="drop__menu drop__menu2">
+                                <ion-icon class="drop__menu1--this drop__menu3--this"
+                                    name="caret-up-outline"></ion-icon>
+                                <div class="drop__menu2--boxContent">
+                                    <!-- this is content -->
+                                    <div class="content__drop-menu2__left">
+                                        <span class="content__menu2--title">
+                                            NỔI BẬT
+                                        </span>
+                                        <ul class="drop__menu2--ul drop__menu--ul">
+                                            <li><a href="#">Bán chạy</a></li>
+                                            <li><a href="#">Sản phẩm mới</a></li>
+                                            <li><a href="#">Giảm giá</a></li>
+                                        </ul>
+                                        <ul class="drop__menu2--ul drop__menu--ul">
+                                            <span class="drop__menu2--ul-title">
+                                                Bộ sản phẩm
+                                            </span>
+                                            <li><a href="#">Pattas Living Journey</a></li>
+                                            <li><a href="#">Pattas Polka Dots</a></li>
+                                            <li><a href="#">Basas Evergreen</a></li>
+                                            <li><a href="#">Urbas Ruler</a></li>
+                                            <li><a href="#">Track 6 Class E</a></li>
+                                        </ul>
+                                        <a class="drop__menu2--linked" href="">
+                                            Collaboration
+                                        </a>
+                                    </div>
+                                    <div class="content__drop-menu2__right">
+                                        <div class="drop__menu2--content-shoe">
+                                            <span class="content__menu2--title">
+                                                GIÀY
+                                            </span>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Dòng sản phẩm
+                                                </span>
+                                                <li><a href="#">Basas</a></li>
+                                                <li><a href="#">Vintas</a></li>
+                                                <li><a href="#">Urbas</a></li>
+                                                <li><a href="#">Pattas</a></li>
+                                                <li><a href="#">Creas</a></li>
+                                                <li><a href="#">Track 6</a></li>
+                                            </ul>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Style
+                                                </span>
+                                                <li><a href="#">Hight Top</a></li>
+                                                <li><a href="#">Low Top</a></li>
+                                                <li><a href="#">Slip - on</a></li>
+                                            </ul>
+                                            <a class="drop__menu2--linked" href="">
+                                                Tất cả giày
+                                            </a>
+                                        </div>
+                                        <div class="drop__menu2--content-fashion">
+                                            <span class="content__menu2--title">
+                                                THỜI TRANG & PHỤ KIỆN
+                                            </span>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Nửa trên
+                                                </span>
+                                                <li><a href="#">Basic Tee</a></li>
+                                                <li><a href="#">Graphic Tee</a></li>
+                                                <li><a href="#">Sweatshirt</a></li>
+                                                <li><a href="#">Hoodie</a></li>
+                                            </ul>
+                                            <ul class="drop__menu2--ul drop__menu--ul">
+                                                <span class="drop__menu2--ul-title">
+                                                    Phụ kiện
+                                                </span>
+                                                <li><a href="#">Nón</a></li>
+                                                <li><a href="#">Giây dày</a></li>
+                                                <li><a href="#">Túi</a></li>
+                                                <li><a href="#">Túi Tote</a></li>
+                                            </ul>
+                                            <a class="drop__menu2--linked" href="">
+                                                Xem tất cả
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- this is content -->
+                                </div>
+                                <span class="drop__menu1--title">MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ <span
+                                        class="highlight"> DỨA</span> !</span>
+                            </div>
+                        </li><span class="space"></span>
+                        <li><a href="#">SALE OFF</a></li><span class="space"></span>
+                        <li>
+                            <a href="#">
+                                <div class="discover-youBox">
+                                    <img src="../images/DiscoverYOU.svg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__main--left">
+                    <form class="box__search">
+                        <button class="button__search">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                        <input class="search__products" type="text" placeholder="Tìm kiếm">
+                    </form>
+                    <div class="box__cart">
+                        <ion-icon class="box__cart--icon" name="cart-outline"></ion-icon>
+                        <span class="quantityCart">
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="header__slide">
+                <div class="header__slide--box">
+                    <span class="header__slide--item">HÀNG 2 TUẦN NHẬN ĐỔI - GIÀY NỬA NĂM BẢO HÀNH</span>
+                    <span class="header__slide--item">BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN</span>
+                </div>
+            </div>
+        </header>
+        

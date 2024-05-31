@@ -1,0 +1,462 @@
+<link rel="stylesheet" href="../styles-admin/dashboard.css">
+<link rel="stylesheet" href="../styles-admin/showHiddenNavBar.css">
+<link rel="stylesheet" href="../styles-admin/orders.css">
+<link rel="stylesheet" href="../styles-admin/base.css">
+<link rel="stylesheet" href="../styles-admin/accounts.css">
+<link rel="stylesheet" href="../styles-admin/products.css">
+<link rel="stylesheet" href="../styles-admin/popup-addItem.css">
+<link rel="stylesheet" href="../styles-admin/popup-addProduct.css">
+<link rel="stylesheet" href="../styles-admin/loading-tiktok.css">
+<link rel="stylesheet" href="../styles-admin/section-update.css">
+<link rel="stylesheet" href="../styles/toastMessage.css">
+<style>
+    .toast__error+.toast__error {
+        margin-top: 15px !important;
+    }
+    .toast__success+.toast__success {
+        margin-top: 15px !important;
+    }
+</style>
+<!-- content start -->
+<div class="container__content container__content--main"
+    style="min-height: 100vh; transform: translateX(0%) !important;">
+    <div class="container__content--orders">
+        <div class="content__orders--top">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">All Accounts</h3>
+                <span class="content__orders--top-text2">12 New User</span>
+            </div>
+            <div class="content__orders--top-right content__orders--top-right-search">
+                <div class="form__group">
+                    <button class="button-search">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                    <input type="text" name="search" class="form__input inputSearch" id="inputSearch"
+                        placeholder="Search">
+                    <!-- <label for="quantity" class="label__place">Số lượng</label> -->
+                </div>
+                <button class="addNewItem">
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <div class="content__orders--bottom">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Infomation</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Password</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% accounts.forEach(item => { %>
+                        <tr>
+                            <td>#<%= item.id %></td>
+                            <td class="tdInfomation">
+                                <div class="boxAvatar">
+                                    <% if (item.avatarAccount == null || item.avatarAccount == "/uploads/undefined") { %>
+                                        <img src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt="">
+                                    <% } else if(item.avatarAccount != null && item.avatarAccount != "/uploads/undefined") { %>
+                                        <img src="<%= item.avatarAccount %>" alt="">
+                                    <% } %>
+                                </div>
+                                <div class="nameUser">
+                                    <span class="nameUser-title"><%= item.nameAccount %></span>
+                                    <span class="nameUser-name" style="font-weight: 600;font-size: 15px;"><%= item.emailAccount %></span>
+                                    <span class="nameUser-name role-<%= item.roleAccount %>" style="font-weight: 600;font-size: 15px; display: flex;"><%= item.roleAccount.toUpperCase() %></span>
+                                </div>
+                            </td>
+                            <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                            <td>0352431477</td>
+                            <td>872004thanh</td>
+                            <td class="td-action">
+                                <ion-icon class="create" name="create-outline"></ion-icon>
+                                |
+                                <form action="/deleteAccount" method="post" id="formDeleteAccount">
+                                    <input type="hidden" name="idAccoutDelete" value="<%= item.id %>">
+                                    <button type="submit">
+                                        <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                    <!-- <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-admin" style="font-weight: 600;font-size: 15px; display: flex;">Admin</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-user" style="font-weight: 600;font-size: 15px; display: flex;">User</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-user" style="font-weight: 600;font-size: 15px; display: flex;">User</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-admin" style="font-weight: 600;font-size: 15px; display: flex;">Admin</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-user" style="font-weight: 600;font-size: 15px; display: flex;">User</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-user" style="font-weight: 600;font-size: 15px; display: flex;">User</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>#2632</td>
+                                <td class="tdInfomation">
+                                    <div class="boxAvatar">
+                                        <img src="images/1ca115a5681bf2d35da0332b141310b7.jpg" alt="">
+                                    </div>
+                                    <div class="nameUser">
+                                        <span class="nameUser-title">Nguyen Quoc Thanh</span>
+                                        <span class="nameUser-name" style="font-weight: 600;font-size: 15px;">thanhnq87@gmail.com</span>
+                                        <span class="nameUser-name role-user" style="font-weight: 600;font-size: 15px; display: flex;">User</span>
+                                    </div>
+                                </td>
+                                <td>302 Snider Street, RUTLAND, VT, 05701</td>
+                                <td>0352431477</td>
+                                <td>872004thanh</td>
+                                <td class="td-action">
+                                    <ion-icon class="create" name="create-outline"></ion-icon>
+                                    |
+                                    <ion-icon class="deleteAccount" name="close-outline"></ion-icon>
+                                </td>
+                              </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <div class="content__orders--pagination">
+            <!-- <span>Showing 01 - 07 of 40</span>
+            <ul class="pagination">
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link pagination-item__link-active">1</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">2</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">...</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">4</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">5</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</div>
+<!-- content end -->
+
+<!-- content update start -->
+<section class="container__content container__content2"
+    style="min-height: 960px !important; transform: translateX(100%);">
+    <span id="idCategory" style="display: none;"></span>
+    <div class="container__content--orders">
+        <div class="content__orders--top" style="display: flex; align-items: center;">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">Detail & Updates</h3>
+                <span class="content__orders--top-text2">Dashboard / <span style="color: #de2e6c;">Update
+                        Account</span></span>
+            </div>
+        </div>
+        <form id="formUpdate" class="content__orders--bottom content__orders--bottom2">
+            <div class="content__orders--bottom-left">
+                <div class="form__group-normal ">
+                    <label for="nameProductUp" class="form__label">User Name</label>
+                    <input type="text" name="nameProductUp" id="userName" class="form__input" placeholder="User Name">
+                </div>
+                <div class="form__group-normal ">
+                    <label for="nameProductUp" class="form__label">Email</label>
+                    <input type="email" name="nameProductUp" id="emailAccount" class="form__input email--input"
+                        placeholder="Email Address">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group-normal ">
+                    <label for="nameProductUp" class="form__label">Phone Number</label>
+                    <input type="number" name="nameProductUp" id="phoneAccount" class="form__input phone--input"
+                        placeholder="Phone Number">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group-normal ">
+                    <label for="nameProductUp" class="form__label">Password</label>
+                    <input type="text" name="nameProductUp" id="passwordAccount" class="form__input password--input"
+                        placeholder="Password">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group-normal" style="gap: 20px;">
+                    <label for="" class="form__label">Role Account</label>
+                    <div class="form__group form__group-role">
+                        <div class="form__group-role-box">
+                            <input value="admin" id="roleAdmin" type="checkbox" name="checkboxRoleAdmin"
+                                placeholder="Role Account">
+                            <label for="" class="form__label">Admin</label>
+                        </div>
+                        <div class="form__group-role-box">
+                            <input value="user" id="roleUser" type="checkbox" name="checkboxRoleUser"
+                                placeholder="Role Account">
+                            <label for="" class="form__label">User</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content__orders--bottom-right">
+                <div class="container__upLoadImage">
+                    <div class="container__upLoadImage--boxImg">
+                        <img id="avatarAccount"
+                            src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt="">
+                    </div>
+                    <div class="container__upLoadImage--boxButton">
+                        <input type="file" class="upLoadAvatar" name="upLoadAvatar" id="">
+                        <button class="button__del--avatar">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__orders--bottom2-boxAction">
+                <span class="exitUpdate">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                    Exit
+                </span>
+                <button class="buttonUpdate">Update</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- content update end -->
+<footer style="padding-top: 145px;">
+    <span>
+        Copyright © Designed & Developed by <span style="color: #de2e6c;">Nguyen Thanh🖖</span> 2024
+    </span>
+</footer>
+</div>
+
+<!-- popup add item -->
+<section class="popup-addItem closePopupAddItem ">
+    <div class="popup-addItem__content">
+        <div class="addItem__content--top">
+            <span class="addItem__content--title">
+                Create New Account
+            </span>
+            <button class="closePopup closePopupAddItem">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+        </div>
+        <div class="addItem__content--main">
+            <form action="/createAccount" method="post" class="form" id="formAddAccount">
+                <div class="form__group--uploadImage">
+                    <div class="form__upload-image">
+                        <div class="box__image--user">
+                            <img src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt=""
+                                class="image__user--upload">
+                        </div>
+                        <div class="box__btn">
+                            <input type="file" name="avatar__user" class="input_file">
+                            <button class="delete__upload--avatarImage box-shadow1">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <label for="nameAccount" class="form__label">Name Account</label>
+                    <input type="text" name="nameAccount" id="" class="form__input nameAccount--input"
+                        placeholder="Name Account">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="emailAccount" class="form__label">Email Account</label>
+                    <input type="email" name="emailAccount" id="" class="form__input email--input"
+                        placeholder="Email Account">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="addressUser" class="form__label">Password Account</label>
+                    <input type="text" name="passwordAccount" id="" class="form__input password--input"
+                        placeholder="Password Account">
+                    <span class="form__message"></span>
+                </div>
+                <!-- <div class="form__group">
+                            <label for="phoneAccount" class="form__label">Phone Account</label>
+                            <input type="number" name="phoneAccount" id="" class="form__input" placeholder="Phone Account">
+                        </div> -->
+                <div class="form__group form__group-role">
+                    <div class="form__group-role-box">
+                        <input type="checkbox" id="checkboxRoleAdmin" name="checkboxRoleAdmin" placeholder="Role Account">
+                        <label for="phoneAccount" class="form__label">Admin</label>
+                    </div>
+                    <div class="form__group-role-box">
+                        <input checked type="checkbox" id="checkboxRoleUser" name="checkboxRoleUser" placeholder="Role Account">
+                        <label for="phoneAccount" class="form__label">User</label>
+                    </div>
+                </div>
+                <div class="form__boxButton">
+                    <span class="popup-back closePopupAddItem">Back</span>
+                    <button class="button__addItem">
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<div class="container__toast" style="height: 150px;">
+    <!-- <div class="toast toast__success">
+                    <div class="toast__icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">Đăng nhập thành công!</h3>
+                        <span class="toast__message">Vào trang user để kiểm tra thông tin tài khoản!</span>
+                    </div>
+                    <div class="toast__close">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div> -->
+</div>
+<div id="loadingTiktok">
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="containerToast">
+    <!-- dom show -->
+</div>
+
+</body>
+
+</html>
+<script src="../js/admin/indexDashboard.js"></script>
+<script src="../js/admin/base.js"></script>
+<script> var exports = {}; </script>
+<script type="module" src="../public/ts/toastMessage.js"></script>
+<script type="module" src="../public/ts/adminAccounts.js"></script>

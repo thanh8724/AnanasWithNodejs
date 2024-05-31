@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Poppins:wght@200;600&family=Roboto:ital,wght@1,500&family=Work+Sans:wght@300;500;900&display=swap');
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+body {
+    width: 100vw;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    background-color: #fbfafb;
+    /* padding: 20px 20px; */
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 10px; /* Chiều rộng thanh cuộn */
+}
+body::-webkit-scrollbar-track {
+    background-color: inherit; /* Màu nền của track */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px; /* Góc tròn cho thumb */
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+    --color1: #AECCCF;
+    --color2: #6C9CA4;
+    --box-shadow1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    --box-shadow3: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --box-shadow4:0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --box-shadow5: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.main__user {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 200px 300px 40px 300px;
+}
+.main__user--header {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.boxAvatar__user {
+    width: 65px;    
+    height: 65px;   
+    border-radius: 100rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar__user--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main__user--header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.userName {
+    font-size: 20px;
+    font-weight: 500;
+}
+.header__titlte {
+    font-size: 14px;
+    color: rgb(48, 46, 46);
+}
+.main__user--content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.main__left {
+    width: 20%;
+    min-height: auto;
+}
+.main__left ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.main__left li {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    transition: var(--trans-bounce2);
+}
+.main__left li:hover {
+    background-color: #ddd;
+}
+.main__left a {
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.menuActive {
+    background-color: #fbe4ea;
+}
+.main__right {
+    width: 80%;
+    min-height: auto;
+}
+.main__right .form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form__avatar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.avatar__container {
+    width: 80px;
+    height: 80px;
+    border-radius: 100rem;
+    overflow: hidden;
+    position: relative;
+}
+.avatar__container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avatar__action {
+    display: flex;
+    gap: 20px;
+}
+.upLoad__avatar {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow2);
+}
+.upLoad__avatar::after {
+    position: absolute;
+    content: "Thêm ảnh";
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.delete__avatar {
+    padding: 0 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow2);
+    transition: var(--trans-bounce);
+}
+.delete__avatar:hover {
+    box-shadow: var(--box-shadow3);
+}
+.form__action {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.submit__upload {
+    width: 150px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #ea3869;
+    color: white;
+    font-weight: 600;
+}

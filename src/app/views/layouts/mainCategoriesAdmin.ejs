@@ -1,0 +1,253 @@
+<link rel="stylesheet" href="../styles-admin/orders.css">
+<link rel="stylesheet" href="../styles-admin/base.css">
+<link rel="stylesheet" href="../styles-admin/accounts.css">
+<link rel="stylesheet" href="../styles-admin/popup-addItem.css">
+<link rel="stylesheet" href="../styles-admin/section-update.css">
+<link rel="stylesheet" href="../styles-admin/loading-mac.css">
+<link rel="stylesheet" href="../styles-admin/loading-tiktok.css">
+<link rel="stylesheet" href="../styles/toastMessage.css">
+<style>
+    .toast__error + .toast__error {
+        margin-top: 15px !important;
+    }
+    .toast__success + .toast__success {
+        margin-top: 15px !important;
+    }
+</style>
+<!-- content start -->
+<div class="container__content container__content--main">
+    <div class="container__content--orders">
+        <div class="content__orders--top" style="display: flex; align-items: center;">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">All Categories</h3>
+                <!-- <span class="content__orders--top-text2"></span> -->
+            </div>
+            <div class="content__orders--top-right content__orders--top-right-search">
+                <div class="form__group">
+                    <button class="button-search">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                    <input type="text" name="search" class="form__input inputSearch" id="inputSearch"
+                        placeholder="Search">
+                    <!-- <label for="quantity" class="label__place">Số lượng</label> -->
+                </div>
+                <button class="addNewItem" style="z-index: 10;">
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <div class="content__orders--bottom">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>General Information</th>
+                        <th>Name Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% categories.forEach(item => { %>
+                        <tr>
+                            <td>#<%= item.id %></td>
+                            <td class="tdInfomation">
+                                <div class="boxAvatar">
+                                    <img src="<%= item.imageCategory %>" alt="">
+                                </div>
+                                <div class="nameUser">
+                                    <span class="nameUser-title">Quantity Items</span>
+                                    <span class="nameUser-name" style="display: flex; justify-content: flex-start;">20 Items</span>
+                                </div>
+                            </td>
+                            <td style="font-size: 18px; font-weight: 700;"><%= item.nameCategory %></td>
+                            <td class="td-action">
+                                <form action="/getPageUpdate" method="POST" id="formGetPageUpdate">
+                                    <input name="idCategory" type="text" style="display: none;" value="<%= item.id %>">
+                                    <button type="submit">
+                                        <ion-icon data-id="<%= item.id %>" class="create" name="create-outline"></ion-icon>
+                                    </button>
+                                </form>
+                                |
+                                <form action="/deleteCategory" method="POST" id="formDeleteCate">
+                                    <input name="idCategory" type="text" style="display: none;" value="<%= item.id %>">
+                                    <button type="submit">
+                                        <ion-icon data-id="<%= item.id %>" id="deleteButton" class="deleteAccount" name="close-outline"></ion-icon>
+                                    </button>
+                                </form>
+                            </td>
+                            </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div class="content__orders--pagination">
+            <!-- <span>Showing 01 - 09 of 40</span>
+                        <ul class="pagination">
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">
+                                    <ion-icon name="chevron-back-outline"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link pagination-item__link-active">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">...</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">4</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">5</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item__link">
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </a>
+                            </li>
+                        </ul> -->
+        </div>
+    </div>
+</div>
+<!-- content end -->
+
+<!-- content update start -->
+<section class="container__content container__content2">
+    <div class="container__content--orders">
+        <div class="content__orders--top" style="display: flex; align-items: center;">
+            <div class="content__orders--top-left">
+                <h3 class="content__orders--top-text1">Detail & Updates</h3>
+                <span class="content__orders--top-text2">Dashboard / <span style="color: #de2e6c;">Update
+                        Category</span></span>
+            </div>
+        </div>
+        <form class="content__orders--bottom content__orders--bottom2" method="POST" action="/updateCategory" id="formUpdateCategory"  enctype="multipart/form-data">
+            <div class="content__orders--bottom-left">
+                <input type="text" id="idCategoryHidden" name="idCategory" style="display: none;" value="">
+                <input type="text" id="urlImageHidden" name="urlImage" style="display: none;" value="">
+                <div class="form__group-normal ">
+                    <label for="nameCategoryUp" class="form__label">Name Category</label>
+                    <input type="text" name="nameCategoryUp" value="" id="inputNameCateUpdate" class="form__input"
+                        placeholder="Name Category">
+                </div>
+                <div class="form__group-normal">
+                    <label for="descriptionProduct" class="form__label">Description Category</label>
+                    <textarea class="form__input" name="descriptionProduct" id="inputDescCateUpdate" cols="50" rows="12"
+                        placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="content__orders--bottom-right">
+                <div class="container__upLoadImage">
+                    <div class="container__upLoadImage--boxImg">
+                        <img id="imageShowUpdateCate"
+                            src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt="">
+                    </div>
+                    <div class="container__upLoadImage--boxButton">
+                        <input type="file" class="upLoadAvatar" name="imageCategory" id="inputUpdateImgCate">
+                        <button class="button__del--avatar">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__orders--bottom2-boxAction">
+                <span class="exitUpdate">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                    Exit
+                </span>
+                <button class="buttonUpdate" id="btn__updateCategory">Update</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- content update end -->
+
+<!-- footer -->
+<footer>
+    <span>
+        Copyright © Designed & Developed by <span style="color: #de2e6c;">Nguyen Thanh🖖</span> 2024
+    </span>
+</footer>
+</div>
+
+<section class="popup-addItem closePopupAddItem">
+    <div class="popup-addItem__content">
+        <div class="addItem__content--top">
+            <span class="addItem__content--title">
+                Add New Category
+            </span>
+            <button class="closePopup closePopupAddItem">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+        </div>
+        <div class="addItem__content--main">
+            <form action="/postCategories" method="POST" class="form" id="form__addCate" enctype="multipart/form-data">
+                <div class="form__group--uploadImage">
+                    <div class="form__upload-image">
+                        <div class="box__image--user">
+                            <img src="https://i.pinimg.com/564x/c7/89/24/c78924c5ea7cd7ae22d35b6cb38bfe47.jpg" alt=""
+                                id="avatar" class="image__user--upload">
+                        </div>
+                        <div class="box__btn">
+                            <input type="file" name="imageCategory" class="input_file"
+                                accept="image/gif, image/jpeg, image/png, image/jpg">
+                            <button class="delete__upload--avatarImage box-shadow1">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <label for="nameCategory" class="form__label">Name Category</label>
+                    <input type="text" name="nameCategory" id="nameCategory" class="form__input"
+                        placeholder="Name Category">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__boxButton">
+                    <span class="popup-back closePopupAddItem">Back</span>
+                    <button class="button__addItem" type="submit">
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<div class="container__toast" style="height: 150px;">
+    <!-- <div class="toast toast__success">
+                <div class="toast__icon">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">Đăng nhập thành công!</h3>
+                    <span class="toast__message">Vào trang user để kiểm tra thông tin tài khoản!</span>
+                </div>
+                <div class="toast__close">
+                    <ion-icon name="close"></ion-icon>
+                </div>
+            </div> -->
+</div>
+<div id="loadingTiktok">
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
+<script src="../js/admin/indexDashboard.js"></script>
+<script src="../js/admin/pagination.js"></script>
+<script src="../js/admin/base.js"></script>
+<script> var exports = {}; </script>
+<script type="module" src="../public/ts/categoriesHandles.js"></script>
+<script type="module" src="../public/ts/toastMessage.js"></script>

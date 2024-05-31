@@ -1,0 +1,79 @@
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+    --color1: #AECCCF;
+    --color2: #6C9CA4;
+    --box-shadow1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    --box-shadow3: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --box-shadow4:0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --box-shadow5: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.navbar-active .main__content--navBar {
+    max-width: 5% !important;
+    overflow: hidden !important;
+    padding: 10px !important;
+}
+.navbar-active .box__logo-navBar {
+    width: 100% !important;
+}
+.navbar-active .logo-text {
+    display: none !important;
+}
+.navbar-active .navBar-ul {
+    width: 100% !important;
+    gap: 10px !important;
+}
+.navbar-active .navBar-li {
+    padding: 10px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 40px 10px 10px 40px !important;
+    transition: background-color var(--trans-bounce), border-radius var(--trans-bounce2);
+}
+.navbar-active .navBar-li:hover {
+    background-color: #e45b8d;
+    border-radius: 10px !important
+}
+.navbar-active .li-active {
+    border-radius: 10px !important;
+    background-color: #e45b8d !important;
+}
+.navbar-active .li-active ion-icon {
+    color: white !important;
+}
+.navbar-active .navBar-li a {
+    display: block;
+    padding: 4px 0;
+}
+.navbar-active .navBar-li ion-icon {
+    font-size: 25px !important; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.navbar-active .navBar-li span {
+    display: none !important;
+}
+.navbar-active .main__content--container {
+    width: 95% !important;
+}
+.navbar-active .main__content--container-header {
+    width: 95% !important;
+}
+.navbar-active .line-button {
+    display: none !important;
+}
+.navbar-active .icon-shownavBar {
+    display: block !important;
+    color: #de2e6c;
+    font-size: 25px;
+}
+
+/* keyframe */
+@keyframes menu-hover {
+    
+}

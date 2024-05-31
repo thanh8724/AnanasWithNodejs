@@ -1,0 +1,54 @@
+.margin--top80 {
+    margin-top: 80px;
+}
+.bottom0 {
+    padding-bottom: 0;
+}
+.footer-product--limited {
+    margin-top: 60px;
+}
+.containerAddImageProduct {
+    display: flex;
+    gap: 50px;
+}
+#inputAvatarproduct {
+    width: 50%;
+    height: 30px;
+    position: relative;
+    z-index: 1;
+}
+#inputAvatarproduct::after {
+    content: "Ảnh Chính Sản Phẩm";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+#inputImagesProduct {
+    width: 50%;
+    position: relative;
+    z-index: 1;
+}
+#inputImagesProduct::after {
+    content: "Ảnh Chi Tiết";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #eee;
+}

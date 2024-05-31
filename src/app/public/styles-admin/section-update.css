@@ -1,0 +1,211 @@
+:root {
+    --trans-bounce: 0.22s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce2: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    --trans-bounce3: 2s cubic-bezier(0.23, 1, 0.320, 1);
+    --color1: #AECCCF;
+    --color2: #6C9CA4;
+    --box-shadow1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    --box-shadow3: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --box-shadow4:0px 2px 3px 0px rgba(0, 0, 0, 0.30), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --box-shadow5: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+.container__content2 {
+    transform: translateX(100%);
+    position: absolute;
+    z-index: 10;
+    transition: var(--trans-bounce2);
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+.content__orders--bottom2 {
+    /* background-color: #AECCCF; */
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 20px;
+    position: relative;
+}
+.content__orders--bottom2-boxAction {
+    position: absolute;
+    left: 0;
+    top: 103%;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+}
+.exitUpdate {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #de2e6c;
+    font-weight: 600;
+    cursor: pointer;
+}
+.buttonUpdate {
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #de2e6c;
+    color: white;
+}
+.content__orders--bottom-left {
+    width: 60%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content__orders--bottom-right {
+    width: 40%;
+    min-height: 100%;
+}
+.container__upLoadImage {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.container__upLoadImage--boxImg {
+    --img: 50%;
+    width: var(--img);
+    height: var(--img);
+    background-color: #AECCCF;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.container__upLoadImage--boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container__upLoadImage--boxButton {
+    width: 250px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__upLoadImage--boxButton .upLoadAvatar {
+    width: 140px;
+    height: 40px;
+    background-color: #AECCCF;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow4);
+}
+.container__upLoadImage--boxButton .upLoadAvatar::after {
+    content: "Add Image";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #AECCCF;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.button__del--avatar {
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #de2e6c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow4);
+}
+.container__content--main {
+    transition: var(--trans-bounce2);
+}
+.transform100 .content__orders--pagination {
+    display: none;
+}
+.transform100 {
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+.transform0 {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.opacity1 {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.width65 {
+    width: 65% !important;
+    gap: 30px;
+}
+.width35 {
+    width: 35% !important;
+    gap: 30px;
+}
+.content__orders--bottom-left--title {
+    width: 100%;
+    display: flex;
+    font-size: 25px;
+    font-weight: 600;
+}
+.boxInfomation-order {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.boxInfomation-order .form__inputSelect {
+    padding: 10px 20px !important;
+}
+.boxInfomation-order--item {
+    display: flex;
+    gap: 20px;
+}
+.boxInfomation-order--item span {
+    font-size: 17px;
+    font-weight: 700;
+}
+.infoReceiver {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+}
+.boxQrCode {
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    background-color: black;
+    position: absolute;
+    right: 40px;
+    top: 0;
+}
+.boxQrCode img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.relative {
+    position: relative;
+    top: 30px;
+    height: 340px;
+}
